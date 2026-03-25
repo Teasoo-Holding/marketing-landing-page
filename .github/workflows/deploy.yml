@@ -1,0 +1,45 @@
+name: Marketing Deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install # or yarn install
+
+      - name: Build Marketing Site
+        run: npm run build # This creates the 'out' folder
+
+      - name: Deploy to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # NEXT.JS EXPORT USES 'out', NOT 'dist'
+          source: "out/*" 
+          target: "/var/www/esghorizon/marketing"
+          strip_components: 1
+
+      - name: Set Permissions
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Ensure Nginx can read the new files
+            chown -R www-data:www-data /var/www/esghorizon/marketing
+            chmod -R 755 /var/www/esghorizon/marketing
