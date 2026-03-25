@@ -1,50 +1,59 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import SectionLabel from "@/components/sections/SectionLabel";
-import { CheckCircle, FileCheck, Calculator, Users, Database, ClipboardList, BarChart3, FileDown, Shield } from "lucide-react";
-import dashboardMockup from "@/assets/dashboard-mockup.png";
-import leafAccent from "@/assets/leaf-accent.png";
+import bubbleRings from "@/assets/bubble-rings.svg";
+import dashboardMockup from "@/assets/k.svg";
+import ghgCalcSvg from "@/assets/C.svg";
+import compactAtomNetwork from "@/assets/compact-atom-network.svg";
+import iconSecurityConfig from "@/assets/Security_Config.svg";
+import iconAbacus from "@/assets/Abacus.svg";
+import iconUserGroups from "@/assets/User_Groups.svg";
+import iconDatabase from "@/assets/Database.svg";
+import iconDocument from "@/assets/Document.svg";
+import iconComboChart from "@/assets/Combo_Chart.svg";
+import iconPresentation from "@/assets/Presentation.svg";
+import iconLock from "@/assets/Lock.svg";
 
 const features = [
   {
-    icon: FileCheck, title: "IFRS Compliance Engine", badge: "MOST VALUED",
+    iconSrc: iconSecurityConfig, title: "IFRS Compliance Engine", badge: "MOST VALUED",
     desc: "Always-updated modules designed for IFRS S1 & S2. Conduct gap assessments, track progress, and generate globally aligned reports in days — not months.",
     bullets: ["Gap assessment against IFRS S1 & S2 frameworks", "Auto-updates when standards change", "Generates disclosure-ready outputs instantly"],
   },
   {
-    icon: Calculator, title: "Automated GHG Calculations", badge: "MOST VALUED",
+    iconSrc: iconAbacus, title: "Automated GHG Calculations", badge: "MOST VALUED",
     desc: "Input activity data — fuel consumption, energy use, travel — and let ESG Horizon handle Scope 1, 2 & 3 conversions using latest GHG Protocol emission factors.",
     bullets: ["Scope 1, 2 & 3 emissions calculated automatically", "Latest IPCC & GHG Protocol factors built in", "Activity data import from multiple sources"],
   },
   {
-    icon: Users, title: "Collaborate Seamlessly",
+    iconSrc: iconUserGroups, title: "Collaborate Seamlessly",
     desc: "Invite team members from operations, HR, and finance to input data directly. Track progress in real-time across all entities.",
     bullets: ["Role-based access for each department", "Real-time data collection progress tracking", "Automated reminders for data owners"],
   },
   {
-    icon: Database, title: "Your System of Record",
+    iconSrc: iconDatabase, title: "Your System of Record",
     desc: "Enjoy a secure, version-controlled hub with full data history and granular access controls — your single source of truth for all ESG data.",
     bullets: ["Full version history on all data entries", "Granular read/write permissions per user", "Immutable audit log for every change"],
   },
   {
-    icon: ClipboardList, title: "Guided, Compliant Reporting",
+    iconSrc: iconDocument, title: "Guided, Compliant Reporting",
     desc: "Step-by-step guided forms ensure you capture the right level of detail for audit-ready, comprehensive disclosures — no ESG expertise required.",
     bullets: ["Contextual help embedded throughout", "Mandatory field validation and quality checks", "Framework-mapped to IFRS"],
   },
   {
-    icon: BarChart3, title: "Visual Dashboards & Insights",
+    iconSrc: iconComboChart, title: "Visual Dashboards & Insights",
     desc: "See your ESG impact at a glance with intuitive dashboards, scope breakdowns, metric analysis, and peer benchmarking across your industry.",
     bullets: ["Executive-ready ESG performance dashboards", "Emission scope breakdown & trend charts", "Peer benchmarking against industry averages"],
   },
   {
-    icon: FileDown, title: "Instant, Flexible Exports",
+    iconSrc: iconPresentation, title: "Instant, Flexible Exports",
     desc: "Export polished, board-ready PDF reports with one click. Download raw Excel data for consultants or generate regulator submission packages.",
     bullets: ["Board-ready PDF reports with your branding", "Excel export for consultants & advisors", "Regulator-formatted submission packages"],
   },
   {
-    icon: Shield, title: "Enterprise Security & Governance",
+    iconSrc: iconLock, title: "Enterprise Security & Governance",
     desc: "Enterprise-grade hosting with encryption at rest and in transit, full audit on logs on every change for complete accountability.",
-    bullets: ["AES-256 encryption at rest & in transit", "SOC 2-ready infrastructure", "Full timestamped audit trail on all activity"],
+    bullets: ["AES-256 encryption at rest & in transit", "SOC 2-aligned infrastructure", "Full timestamped audit trail on all activity"],
   },
 ];
 
@@ -52,22 +61,33 @@ export default function FeaturesContent() {
   return (
     <>
       {/* Hero */}
-      <section className="hero-dark relative overflow-hidden py-20 md:py-28">
-        <img src={leafAccent.src} alt="" className="absolute right-0 top-0 h-48 opacity-20 rotate-45" />
-        <div className="container relative">
-          <SectionLabel>PLATFORM FEATURES</SectionLabel>
-          <h1 className="text-4xl md:text-5xl font-bold mt-3 max-w-lg">
-            Everything You Need to{" "}
-            <span className="accent-italic">Lead on ESG</span>
-          </h1>
-          <p className="text-hero-dark-foreground/70 mt-4 max-w-xl">
-            Powerful features designed for modern sustainability reporting across Africa — from data collection to board-ready disclosure.
-          </p>
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#f7fdfb] via-[#f0faf7] to-[#e8f6f2] py-20 md:py-28">
+        {/* Gradient overlay fading right edge */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-[#e8f6f2]/60" />
+
+        <div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <SectionLabel>PLATFORM FEATURES</SectionLabel>
+            <h1 className="text-4xl md:text-5xl font-bold mt-3 max-w-lg text-foreground">
+              Everything You Need to{" "}
+              <span className="accent-italic">Lead on ESG</span>
+            </h1>
+            <p className="text-muted-foreground mt-4 max-w-xl">
+              Powerful features designed for modern sustainability reporting across Africa — from data collection to board-ready disclosure.
+            </p>
+          </div>
+          <div className="hidden lg:flex justify-center">
+            <img
+              src={compactAtomNetwork.src}
+              alt=""
+              className="w-[420px] opacity-[0.18] animate-slow-spin select-none pointer-events-none"
+            />
+          </div>
         </div>
       </section>
 
       {/* Core Features */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]">
         <div className="container">
           <div className="text-center mb-16">
             <SectionLabel>CORE CAPABILITIES</SectionLabel>
@@ -81,23 +101,26 @@ export default function FeaturesContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((f) => (
-              <div key={f.title} className="border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={f.title}
+                className={`rounded-2xl p-8 hover:shadow-lg transition-shadow border border-border ${
+                  f.badge ? "border-t-[3px] border-t-primary" : ""
+                }`}
+              >
                 {f.badge && (
-                  <span className="text-[10px] font-bold tracking-wider bg-primary/10 text-primary px-2 py-1 rounded-full mb-3 inline-block">
+                  <span className="text-[10px] font-bold tracking-wider border border-primary/40 text-primary px-3 py-1 rounded-full mb-5 inline-block">
                     {f.badge}
                   </span>
                 )}
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <f.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="font-heading font-bold text-xl">{f.title}</h3>
+                <div className="mb-4">
+                  <img src={f.iconSrc.src} alt={f.title} className="h-10 w-10" />
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">{f.desc}</p>
-                <ul className="space-y-2">
+                <h3 className="font-bold text-2xl mb-3">{f.title}</h3>
+                <p className="text-base text-muted-foreground mb-8 leading-relaxed">{f.desc}</p>
+                <ul className="space-y-4">
                   {f.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <li key={b} className="flex items-center gap-3 text-[15px]">
+                      <span className="h-5 w-5 rounded-full border-2 border-primary/30 shrink-0" />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -109,49 +132,96 @@ export default function FeaturesContent() {
       </section>
 
       {/* Compliance Engine */}
-      <section className="py-20 md:py-28 bg-muted/50">
+      <section className="py-20 md:py-28">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionLabel>IFRS COMPLIANCE ENGINE</SectionLabel>
-              <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
                 From Gap Assessment to{" "}
                 <span className="accent-italic">Global Report</span>
               </h2>
-              <p className="text-muted-foreground mb-6">
-                ESG Horizon&apos;s compliance engine continuously checks your disclosures against S1 and S2 requirements, flags gaps in real time, and guides your team to close them before submission.
+              <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                The IFRS compliance engine continuously checks your disclosures against S1 and S2 requirements, flags gaps in real-time, and guides your team to close them before submission.
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {[
                   "IFRS S1 (General Sustainability Disclosures) fully mapped",
-                  "IFRS S2 (Climate-related disclosures) with scenario analysis support",
+                  "IFRS S2 (Climate-related Disclosures) with scenario analysis support",
                   "Standards auto-update when ISSB releases new guidance",
-                  "Cross-referenced with GRI, CDP, SASB for multi-framework reporting",
+                  "Cross-referenced with GRI, TCFD, SASB for multi-framework reporting",
                 ].map((item) => (
-                  <li key={item} className="flex gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                  <li key={item} className="flex items-start gap-3 text-base">
+                    <span className="h-6 w-6 mt-0.5 shrink-0 rounded-full bg-primary flex items-center justify-center">
+                      <svg className="h-3.5 w-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <img src={dashboardMockup.src} alt="Compliance Dashboard" className="rounded-xl shadow-xl" />
+              <div className="animate-float">
+                <img src={dashboardMockup.src} alt="ESG Assessment Report" className="w-full scale-[1.4] origin-center" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Automated GHG Calculations */}
+      <section className="py-20 md:py-28 bg-muted/30">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="animate-float">
+                <img src={ghgCalcSvg.src} alt="GHG Emissions Dashboard" className="w-full scale-[1.6] origin-center" />
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <SectionLabel>AUTOMATED GHG CALCULATIONS</SectionLabel>
+              <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
+                Input Data.{" "}
+                <span className="accent-italic">Get Certified Figures.</span>
+              </h2>
+              <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                No more Excel emission factor lookups. ESG Horizon maintains the latest IPCC AR6 and GHG Protocol conversion factors — updated automatically as standards evolve.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Fuel consumption → tCO₂e in one click",
+                  "Location-based & market-based Scope 2 methodologies",
+                  "Scope 3 category templates for 15 categories",
+                  "Intensity metrics auto-calculated (per revenue, per employee)",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-base">
+                    <span className="h-6 w-6 mt-0.5 shrink-0 rounded-full bg-primary flex items-center justify-center">
+                      <svg className="h-3.5 w-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="hero-dark py-20 md:py-24">
-        <div className="container text-center">
+      <section className="relative bg-primary py-20 md:py-24 overflow-hidden">
+        <img
+          src={bubbleRings.src}
+          alt=""
+          className="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-60 select-none animate-cta-drift"
+        />
+        <div className="container relative text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Start Building a Confident<br />ESG Reporting Process
           </h2>
-          <p className="text-hero-dark-foreground/70 mb-8 max-w-lg mx-auto">
+          <p className="text-white/70 mb-8 max-w-lg mx-auto">
             See how ESG Horizon fits your organisation in a personalised 30-minute walkthrough.
           </p>
-          <Button size="lg" asChild>
+          <Button size="lg" asChild className="bg-white text-primary hover:bg-white/90 rounded-lg px-8 py-6 text-base font-semibold">
             <Link href="/contact">Request Your Personalised Demo</Link>
           </Button>
         </div>
