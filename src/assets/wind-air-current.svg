@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dashed orbit rings -->
+  <circle cx="210" cy="210" r="120" stroke="#1D9E75" stroke-width="0.8" fill="none" stroke-dasharray="8 8"/>
+  <circle cx="210" cy="210" r="60"  stroke="#1D9E75" stroke-width="0.8" fill="none"/>
+  <circle cx="210" cy="210" r="180" stroke="#0F6E56" stroke-width="0.5" fill="none" stroke-dasharray="4 8" opacity="0.4"/>
+
+  <!-- Wind curl — upper right -->
+  <path d="M210 210 C210 210 310 150 350 100 C380 60 370 20 330 30 C290 40 280 80 300 110"
+        stroke="#1D9E75" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <!-- Arrowhead upper right -->
+  <path d="M296 105 L300 110 L305 104" stroke="#1D9E75" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Wind curl — lower right -->
+  <path d="M210 210 C210 210 280 260 330 310 C370 350 400 340 390 300 C380 260 340 250 310 270"
+        stroke="#1D9E75" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <!-- Arrowhead lower right -->
+  <path d="M306 274 L310 270 L314 275" stroke="#1D9E75" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Wind curl — left -->
+  <path d="M210 210 C210 210 110 240 60 270 C20 295 10 330 50 340 C90 350 120 310 100 280"
+        stroke="#1D9E75" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Arrowhead left -->
+  <path d="M97 276 L100 280 L104 275" stroke="#1D9E75" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Secondary subtle curls -->
+  <path d="M210 210 C220 190 270 140 290 90" stroke="#0F6E56" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.4" stroke-dasharray="4 4"/>
+  <path d="M210 210 C200 230 180 300 140 350" stroke="#0F6E56" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.35" stroke-dasharray="4 4"/>
+  <path d="M210 210 C240 215 310 200 360 170" stroke="#0F6E56" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.3" stroke-dasharray="3 5"/>
+
+  <!-- Particle dots along wind paths -->
+  <circle cx="280" cy="168" r="4" fill="#9FE1CB" opacity="0.5"/>
+  <circle cx="340" cy="122" r="3" fill="#9FE1CB" opacity="0.4"/>
+  <circle cx="260" cy="250" r="4" fill="#9FE1CB" opacity="0.45"/>
+  <circle cx="320" cy="298" r="3" fill="#9FE1CB" opacity="0.35"/>
+  <circle cx="130" cy="248" r="3" fill="#9FE1CB" opacity="0.4"/>
+  <circle cx="72"  cy="312" r="3" fill="#9FE1CB" opacity="0.3"/>
+
+  <!-- Centre node -->
+  <circle cx="210" cy="210" r="10" fill="#0F6E56" opacity="0.6"/>
+  <circle cx="210" cy="210" r="5"  fill="#9FE1CB" opacity="0.8"/>
+
+  <!-- Wind speed lines (horizontal streaks) -->
+  <line x1="30"  y1="155" x2="90"  y2="155" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+  <line x1="20"  y1="165" x2="70"  y2="165" stroke="#1D9E75" stroke-width="1"   stroke-linecap="round" opacity="0.2"/>
+  <line x1="340" y1="390" x2="400" y2="390" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+  <line x1="350" y1="400" x2="400" y2="400" stroke="#1D9E75" stroke-width="1"   stroke-linecap="round" opacity="0.2"/>
+</svg>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="600" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Industrial stack bases -->
+  <rect x="168" y="520" width="24" height="70" rx="3" fill="#085041" opacity="0.35"/>
+  <rect x="208" y="535" width="20" height="55" rx="3" fill="#085041" opacity="0.3"/>
+  <rect x="148" y="540" width="16" height="50" rx="3" fill="#085041" opacity="0.25"/>
+
+  <!-- Stack tops -->
+  <rect x="164" y="514" width="32" height="10" rx="2" fill="#0F6E56" opacity="0.4"/>
+  <rect x="204" y="528" width="28" height="9" rx="2" fill="#0F6E56" opacity="0.35"/>
+  <rect x="144" y="533" width="24" height="9" rx="2" fill="#0F6E56" opacity="0.3"/>
+
+  <!-- Main central plume — tall, swirling -->
+  <path d="M180 510 C180 510 175 470 185 430 C192 400 208 390 205 355 C202 320 182 308 188 270 C194 232 210 205 205 165 C200 125 185 95 190 55 C192 38 196 20 196 20"
+        stroke="#1D9E75" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Right plume -->
+  <path d="M218 530 C218 530 212 498 222 465 C230 438 245 428 242 395 C238 362 222 350 228 318 C234 286 248 268 244 235"
+        stroke="#1D9E75" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Left plume -->
+  <path d="M156 538 C156 538 150 510 158 482 C165 458 178 448 175 418 C172 388 160 375 165 348"
+        stroke="#1D9E75" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+  <!-- Faint background plumes for depth -->
+  <path d="M200 510 C195 480 205 450 200 420 C195 390 180 375 185 345 C190 315 205 295 200 265"
+        stroke="#0F6E56" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.4"/>
+  <path d="M170 525 C165 498 172 472 168 445 C164 418 152 405 156 378"
+        stroke="#0F6E56" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Wisp / particle dots along main plume -->
+  <circle cx="186" cy="460" r="4" fill="#1D9E75" opacity="0.25"/>
+  <circle cx="196" cy="400" r="5" fill="#1D9E75" opacity="0.2"/>
+  <circle cx="188" cy="340" r="6" fill="#1D9E75" opacity="0.15"/>
+  <circle cx="198" cy="280" r="7" fill="#1D9E75" opacity="0.12"/>
+  <circle cx="190" cy="220" r="8" fill="#1D9E75" opacity="0.09"/>
+  <circle cx="194" cy="155" r="10" fill="#1D9E75" opacity="0.07"/>
+  <circle cx="191" cy="90"  r="14" fill="#1D9E75" opacity="0.05"/>
+  <circle cx="194" cy="35"  r="18" fill="#1D9E75" opacity="0.04"/>
+
+  <!-- CO2 molecule labels floating up -->
+  <text x="218" y="350" font-family="monospace" font-size="11" fill="#1D9E75" opacity="0.5" transform="rotate(5 218 350)">CO₂</text>
+  <text x="162" y="290" font-family="monospace" font-size="10" fill="#1D9E75" opacity="0.4" transform="rotate(-8 162 290)">CH₄</text>
+  <text x="210" y="220" font-family="monospace" font-size="9"  fill="#1D9E75" opacity="0.3" transform="rotate(3 210 220)">N₂O</text>
+  <text x="175" y="155" font-family="monospace" font-size="9"  fill="#1D9E75" opacity="0.25" transform="rotate(-5 175 155)">CO₂</text>
+</svg>
