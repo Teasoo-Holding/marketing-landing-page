@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer dashed ring -->
+  <circle cx="210" cy="210" r="150" stroke="#0F6E56" stroke-width="0.5" fill="none" stroke-dasharray="6 6"/>
+  <!-- Inner solid ring -->
+  <circle cx="210" cy="210" r="80"  stroke="#0F6E56" stroke-width="0.8" fill="none"/>
+
+  <!-- Bond lines from centre to primary -->
+  <line x1="210" y1="210" x2="100" y2="120" stroke="#0F6E56" stroke-width="2.2"/>
+  <line x1="210" y1="210" x2="320" y2="100" stroke="#0F6E56" stroke-width="2.2"/>
+  <line x1="210" y1="210" x2="330" y2="310" stroke="#1D9E75" stroke-width="2"/>
+  <line x1="210" y1="210" x2="90"  y2="310" stroke="#1D9E75" stroke-width="2"/>
+  <!-- Dashed vertical bonds -->
+  <line x1="210" y1="210" x2="210" y2="50"  stroke="#0F6E56" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="210" y1="210" x2="210" y2="370" stroke="#0F6E56" stroke-width="1.5" stroke-dasharray="5 3"/>
+
+  <!-- Cross-bonds between outer atoms -->
+  <line x1="100" y1="120" x2="320" y2="100" stroke="#085041" stroke-width="0.7" stroke-dasharray="3 4" opacity="0.4"/>
+  <line x1="90"  y1="310" x2="330" y2="310" stroke="#085041" stroke-width="0.7" stroke-dasharray="3 4" opacity="0.4"/>
+  <line x1="100" y1="120" x2="90"  y2="310" stroke="#085041" stroke-width="0.7" stroke-dasharray="3 4" opacity="0.3"/>
+  <line x1="320" y1="100" x2="330" y2="310" stroke="#085041" stroke-width="0.7" stroke-dasharray="3 4" opacity="0.3"/>
+
+  <!-- Outer primary atoms (teal — Carbon) -->
+  <circle cx="100" cy="120" r="20" fill="#1D9E75"/>
+  <circle cx="320" cy="100" r="20" fill="#1D9E75"/>
+  <!-- Outer amber atoms (Oxygen) -->
+  <circle cx="330" cy="310" r="18" fill="#EF9F27"/>
+  <circle cx="90"  cy="310" r="18" fill="#EF9F27"/>
+  <!-- Top/bottom small atoms -->
+  <circle cx="210" cy="50"  r="13" fill="#0F6E56" opacity="0.6"/>
+  <circle cx="210" cy="370" r="13" fill="#0F6E56" opacity="0.6"/>
+
+  <!-- Atom labels -->
+  <text x="100" y="125" font-family="monospace" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">C</text>
+  <text x="320" y="105" font-family="monospace" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">C</text>
+  <text x="330" y="315" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">O</text>
+  <text x="90"  y="315" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">O</text>
+
+  <!-- Centre nucleus -->
+  <circle cx="210" cy="210" r="30" fill="#0F6E56"/>
+  <circle cx="210" cy="210" r="18" fill="#085041"/>
+  <circle cx="210" cy="210" r="8"  fill="#9FE1CB"/>
+  <text x="210" y="214" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">GHG</text>
+</svg>

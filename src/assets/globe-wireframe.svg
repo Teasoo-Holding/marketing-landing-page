@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="480" height="480" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shadow / ground ring -->
+  <ellipse cx="240" cy="440" rx="120" ry="14" fill="#0F6E56" opacity="0.08"/>
+
+  <!-- Outer circle -->
+  <circle cx="240" cy="240" r="200" stroke="#0F6E56" stroke-width="1.5"/>
+
+  <!-- Longitude lines (meridians) -->
+  <ellipse cx="240" cy="240" rx="60"  ry="200" stroke="#0F6E56" stroke-width="1"   fill="none"/>
+  <ellipse cx="240" cy="240" rx="120" ry="200" stroke="#0F6E56" stroke-width="1"   fill="none"/>
+  <ellipse cx="240" cy="240" rx="170" ry="200" stroke="#0F6E56" stroke-width="0.7" fill="none" stroke-dasharray="5 4"/>
+
+  <!-- Latitude lines (parallels) -->
+  <ellipse cx="240" cy="240" rx="200" ry="60"  stroke="#0F6E56" stroke-width="1"   fill="none"/>
+  <ellipse cx="240" cy="240" rx="200" ry="115" stroke="#0F6E56" stroke-width="0.8" fill="none"/>
+  <ellipse cx="240" cy="240" rx="200" ry="165" stroke="#0F6E56" stroke-width="0.6" fill="none" stroke-dasharray="4 5"/>
+
+  <!-- Axis lines -->
+  <line x1="40"  y1="240" x2="440" y2="240" stroke="#0F6E56" stroke-width="0.8" opacity="0.6"/>
+  <line x1="240" y1="40"  x2="240" y2="440" stroke="#0F6E56" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Polar caps glow -->
+  <circle cx="240" cy="40"  r="16" fill="#1D9E75" opacity="0.25"/>
+  <circle cx="240" cy="440" r="16" fill="#1D9E75" opacity="0.25"/>
+
+  <!-- Continents (simplified Africa + outline blobs) -->
+  <!-- Africa-like shape -->
+  <path d="M230 180 C245 175 265 178 275 195 C290 215 292 240 285 265 C278 290 268 315 255 330 C245 340 235 338 228 325 C218 308 215 285 218 260 C220 235 218 210 230 180Z"
+        fill="#1D9E75" opacity="0.35"/>
+  <!-- Europe-like blob -->
+  <path d="M195 155 C205 148 220 150 228 160 C232 168 228 178 220 182 C210 186 198 180 194 170 C191 163 192 158 195 155Z"
+        fill="#1D9E75" opacity="0.25"/>
+  <!-- Americas-like blob -->
+  <path d="M130 200 C140 190 155 193 162 205 C168 218 165 238 155 252 C147 263 136 265 128 256 C120 246 118 228 122 214 C124 207 127 203 130 200Z"
+        fill="#1D9E75" opacity="0.2"/>
+  <!-- Asia blob -->
+  <path d="M295 155 C315 148 340 152 352 168 C360 180 356 198 342 205 C328 212 308 208 298 196 C288 184 285 165 295 155Z"
+        fill="#1D9E75" opacity="0.2"/>
+
+  <!-- Orbit ring around globe (satellite) -->
+  <ellipse cx="240" cy="240" rx="220" ry="55" stroke="#EF9F27" stroke-width="1" fill="none" stroke-dasharray="8 6" opacity="0.4" transform="rotate(-25 240 240)"/>
+  <!-- Satellite dot on orbit -->
+  <circle cx="440" cy="215" r="7" fill="#EF9F27" opacity="0.6"/>
+
+  <!-- Centre dot -->
+  <circle cx="240" cy="240" r="5" fill="#0F6E56" opacity="0.4"/>
+</svg>
