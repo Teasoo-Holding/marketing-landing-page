@@ -3,13 +3,12 @@ import logo from "@/assets/logo-full.png";
 
 const Footer = () => (
   <footer className="bg-[#1a1a1a] text-white">
-    {/* Top accent bar */}
-    <div className="h-1 bg-primary" />
+    {/* Top accent bar - removed */}
 
     <div className="px-6 md:px-10 lg:px-16 xl:px-24 py-16">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-12 md:gap-32">
         <div>
-          <img src={logo.src} alt="ESG Horizon" className="h-20 w-auto mb-5" />
+          <img src={logo.src} alt="ESG Horizon" className="h-24 w-auto mb-5" />
           <p className="text-sm text-white/60 max-w-sm leading-relaxed">
             The one-stop platform for ESG reporting in Nigeria and across Africa. Automated, compliant, and audit-ready.
           </p>

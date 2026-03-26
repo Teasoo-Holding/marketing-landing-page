@@ -1,0 +1,9 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="40" height="40" fill="url(#pattern0_8546_49247)"/>
+<defs>
+<pattern id="pattern0_8546_49247" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_8546_49247" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_8546_49247" width="100" height="100" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADGElEQVR4nO3cPWgUQRjG8dGIaGXhzOVIYm43aiPYKNaCjY2tiI0fZDZBRCRRiAiSVIaAaGF2RLCyEU8UbLQQnDnFDxC10CJFClEQoqjJbVLYOLIJiVbJXW735p3L84enDeH9sXdXHMcYQgghhBBCCCGEEEJrrG413RPEs8eCePZ8oKpDlBeqqgzjuX3M2nWs1epRyYEwTl6FKrH+rfopxWFl28a8b9iuD+Jk1P1RkyxgHvfc/LmF+VzrYCTzC1TyfFfZbmT+vkxV/7g+Ypj14mSE+Zi/7xnJSk9J0nF9ZivzqdKNX4Hrw4U5rjQ+c4L5VPrR1vXRwnyfklvMpxY+x7s/XJjX4uoj5lPpG1+Lg2jmUwAhFkCIBRBiAYRYACEWQIgFEGIBhFgAIRZAiAUQYrU6SOnK1DchTbmWcWluc6nHuNSHSsf1JoCo7Nc99tWKyNQ9LvWUkJXTjDX5mywAMcvDRPpB18DLzQBRNEAWUMy9pj0pADG1ofRWjgBE0QERkZkAiCIFYgt9ZjdAFB0Q0atPAkTRAeHSXASIogMiIp3/NyEBYgASAgQgAiA0tu3yF4BQWufIJEAorTj4DiBUVrr63RaiCkBILE5s8dz7DDEAYhtZ56WJjDEAYlezYHzGdlz4kAMGQGxdENd+2K7hSVs49SInDKogcfXOdjW3d7kVB98+KZ59Y5ux9jOvbaH/WY4ItEHK+4fthpX+5vy3OJpyINPk0QKpCQMgzQGpGSMNIPmC1IWRBpD8QOrGSANIPiCrwkgDSPYgq8ZIA0i2IA1hpAEkO5CGMdIAkg1IJhhpAGkcJDOMNIA00PyveWb8o5Ei0nfdH8/4CZJHXBrl/ngGIIvxSA+4P54ByGKiV+9wfzwDkP8TUj90f0CALMX7zU4hzbT7IwJkKSGfHuRSz7k/JECW4n2VPTwyH90fEyD/Olxu41If5ZG+LyL9WUT6t/vjrmUQoglphgDiNQpAiKEAhBgKQIihAIQYCkCIoQCEGApAiKEAhBgKQIihAIQYCkBI1d6vA9f/A0IIIYQQQgghhBBCLKf+AoQxP7+XVq/FAAAAAElFTkSuQmCC"/>
+</defs>
+</svg>
