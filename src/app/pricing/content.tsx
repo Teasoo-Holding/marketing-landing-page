@@ -174,7 +174,7 @@ export default function PricingContent() {
       </section>
 
       {/* Deploy Steps */}
-      <section className="relative py-20 md:py-24 overflow-hidden bg-[#1a1a2e] text-white">
+      <section className="relative py-20 md:py-24 overflow-hidden bg-[#1a1a1a] text-white">
         {/* Atmosphere waves background */}
         <img
           src={atmosphereWaves.src}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "@/styles/index.css";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -125,6 +126,7 @@ export default function RootLayout({
       </head>
       <body className="font-body bg-background text-foreground">
         {children}
+        <Toaster />
       </body>
     </html>
   );
