@@ -157,7 +157,7 @@ export default function HowItWorksContent() {
                       {step.num}
                     </div>
                   </div>
-                  {step.num < 3 && <div className="w-1 h-20 bg-gradient-to-b from-primary/30 to-transparent mt-2" />}
+                  <div className="w-1 h-20 bg-gradient-to-b from-primary/30 to-transparent mt-2" />
                 </div>
 
                 {/* Step content card */}
