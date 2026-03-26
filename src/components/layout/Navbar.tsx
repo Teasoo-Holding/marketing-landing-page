@@ -33,7 +33,9 @@ const Navbar = () => {
               key={link.path}
               href={link.path}
               className={`text-[15px] font-medium transition-colors hover:text-primary ${
-                pathname === link.path ? "text-primary" : "text-foreground"
+                (link.path === "/" ? pathname === "/" : pathname.startsWith(link.path))
+                  ? "text-primary underline underline-offset-[6px] decoration-2"
+                  : "text-foreground"
               }`}
             >
               {link.label}
@@ -41,7 +43,10 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
+          <Button variant="outline" asChild className="rounded-lg px-6 py-5 text-[15px] border-primary text-primary hover:bg-primary/5">
+            <Link href="https://app.esghorizon.africa/login">Sign In</Link>
+          </Button>
           <Button asChild className="rounded-lg px-6 py-5 text-[15px]">
             <Link href="/contact">Request Demo</Link>
           </Button>
@@ -62,7 +67,9 @@ const Navbar = () => {
               href={link.path}
               onClick={() => setMobileOpen(false)}
               className={`block py-3 text-sm font-medium ${
-                pathname === link.path ? "text-primary" : "text-foreground"
+                (link.path === "/" ? pathname === "/" : pathname.startsWith(link.path))
+                  ? "text-primary"
+                  : "text-foreground"
               }`}
             >
               {link.label}
