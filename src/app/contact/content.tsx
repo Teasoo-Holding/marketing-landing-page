@@ -124,7 +124,7 @@ export default function ContactContent() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="font-heading font-bold text-3xl mb-4">What to Expect</h2>
+              <h2 className="font-body font-bold text-3xl md:text-4xl mb-4 tracking-tight">What to Expect</h2>
               <p className="text-muted-foreground mb-8">
                 We won&apos;t put you in a queue or give you a generic product tour. Here&apos;s exactly what happens when you submit this form:
               </p>
@@ -144,7 +144,7 @@ export default function ContactContent() {
             </div>
 
             <div className="border border-border rounded-xl p-8">
-              <h3 className="font-heading font-bold text-2xl mb-2">Book Your Demo</h3>
+              <h3 className="font-body font-bold text-2xl md:text-3xl mb-2 tracking-tight">Book Your Demo</h3>
               <p className="text-sm text-muted-foreground mb-6">We&apos;ll be in touch within one business day.</p>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
