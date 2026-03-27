@@ -108,7 +108,7 @@ export default function ContactContent() {
         <div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
             <SectionLabel>GET IN TOUCH</SectionLabel>
-            <h1 className="text-4xl md:text-5xl font-bold mt-3 max-w-lg leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg leading-tight">
               Ready to Transform Your{" "}
               <span className="accent-italic">ESG Journey?</span>
             </h1>
@@ -143,11 +143,11 @@ export default function ContactContent() {
               </div>
             </div>
 
-            <div className="border border-border rounded-xl p-8">
+            <div className="border border-border rounded-xl p-5 md:p-8">
               <h3 className="font-body font-bold text-2xl md:text-3xl mb-2 tracking-tight">Book Your Demo</h3>
               <p className="text-sm text-muted-foreground mb-6">We&apos;ll be in touch within one business day.</p>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-1 block">First Name *</label>
                     <Input name="firstName" placeholder="Enter your first name" required />
@@ -165,7 +165,7 @@ export default function ContactContent() {
                   <label className="text-sm font-medium mb-1 block">Organization Name *</label>
                   <Input name="organization" placeholder="Your Company" required />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-1 block">Industry *</label>
                     <Select value={industry} onValueChange={setIndustry} required>
@@ -213,7 +213,7 @@ export default function ContactContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/70">OUR PRESENCE</span>
-              <h2 className="font-body text-3xl md:text-4xl font-bold mt-3 mb-6 leading-tight">
+              <h2 className="font-body text-2xl md:text-4xl font-bold mt-3 mb-6 leading-tight">
                 Built for Africa,<br />
                 <span className="font-heading italic text-white/90">Connected to the World</span>
               </h2>
@@ -234,8 +234,8 @@ export default function ContactContent() {
                 { iconSrc: iconBuilding, title: "Built with regulatory input" },
                 { iconSrc: iconGlobe, title: "Designed for African realities" },
               ].map((item, i) => (
-                <div key={i} className="bg-white/[0.08] border border-white/20 rounded-2xl p-8 text-center flex flex-col items-center justify-center gap-3">
-                  <img src={item.iconSrc.src} alt="" className="h-14 w-14" />
+                <div key={i} className="bg-white/[0.08] border border-white/20 rounded-2xl p-5 md:p-8 text-center flex flex-col items-center justify-center gap-3">
+                  <img src={item.iconSrc.src} alt="" className="h-10 w-10 md:h-14 md:w-14" />
                   <p className="text-sm text-white/70">{item.title}</p>
                 </div>
               ))}

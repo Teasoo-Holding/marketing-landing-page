@@ -47,7 +47,7 @@ export default function PricingContent() {
         <div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
             <SectionLabel>PRICING</SectionLabel>
-            <h1 className="text-4xl md:text-5xl font-bold mt-3 max-w-lg text-foreground">
+            <h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg text-foreground">
               Pricing Built Around{" "}
               <span className="accent-italic">Your Organisation</span>
             </h1>
@@ -55,11 +55,11 @@ export default function PricingContent() {
               We don&apos;t believe in one-size-fits-all plans. Your organisation is unique — your pricing should reflect that.
             </p>
           </div>
-          <div className="hidden lg:flex justify-end">
+          <div className="absolute right-[-40px] top-1/2 -translate-y-1/2 lg:relative lg:right-auto lg:top-auto lg:translate-y-0 flex justify-end">
             <img
               src={leafNature.src}
               alt=""
-              className="w-[400px] opacity-[0.15] animate-gentle-pulse select-none pointer-events-none"
+              className="w-[220px] md:w-[300px] lg:w-[400px] opacity-[0.10] lg:opacity-[0.15] animate-gentle-pulse select-none pointer-events-none"
             />
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function PricingContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionLabel>OUR APPROACH</SectionLabel>
-              <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
+              <h2 className="text-2xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
                 Pricing by <span className="accent-italic">Conversation, Not Catalogue</span>
               </h2>
               <p className="text-muted-foreground mb-6 text-base leading-relaxed">
@@ -99,7 +99,7 @@ export default function PricingContent() {
               </div>
             </div>
 
-            <div className="relative bg-primary rounded-2xl p-10 text-primary-foreground overflow-hidden mt-12">
+            <div className="relative bg-primary rounded-2xl p-6 md:p-10 text-primary-foreground overflow-hidden mt-8 md:mt-12">
               {/* Overlay for depth */}
               <div className="absolute inset-0 bg-gradient-to-br from-black/5 via-transparent to-black/10 pointer-events-none" />
               {/* Ellipse decorations */}
@@ -107,7 +107,7 @@ export default function PricingContent() {
               <img src={ellipseTeal.src} alt="" className="pointer-events-none absolute -bottom-6 -left-6 w-56 opacity-50 select-none" />
 
               <div className="relative">
-                <h3 className="font-bold text-3xl mb-4">Get a Personalised Plan</h3>
+                <h3 className="font-bold text-2xl md:text-3xl mb-4">Get a Personalised Plan</h3>
                 <p className="text-primary-foreground/80 mb-8 text-base leading-relaxed">
                   Tell us about your organisation in a 30-minute demo. We&apos;ll show you exactly what ESG Horizon can do — then tailor a proposal just for you.
                 </p>
@@ -127,16 +127,16 @@ export default function PricingContent() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 bg-white text-primary font-semibold rounded-lg px-8 py-3.5 text-base hover:bg-white/90 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold rounded-lg px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base hover:bg-white/90 transition-colors"
                   >
                     Get a Custom Quote <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 border border-white/50 text-white font-semibold rounded-lg px-8 py-3.5 text-base hover:border-white hover:bg-white/10 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 border border-white/50 text-white font-semibold rounded-lg px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base hover:border-white hover:bg-white/10 transition-colors"
                   >
                     Book a Demo
                   </Link>
@@ -159,9 +159,9 @@ export default function PricingContent() {
               Regardless of the modules you select, these core capabilities are included in every ESG Horizon plan.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {essentials.map((e) => (
-              <div key={e.title} className="rounded-2xl border border-border bg-muted/50 p-7">
+              <div key={e.title} className="rounded-2xl border border-border bg-muted/50 p-5 md:p-7">
                 <div className="mb-5">
                   <img src={e.iconSrc.src} alt={e.title} className="h-10 w-10" />
                 </div>
@@ -179,19 +179,19 @@ export default function PricingContent() {
         <img
           src={atmosphereWaves.src}
           alt=""
-          className="pointer-events-none absolute -bottom-10 left-0 w-full opacity-30 select-none animate-drift"
+          className="pointer-events-none absolute bottom-0 left-0 w-[250%] md:w-[180%] lg:w-full opacity-30 select-none animate-drift"
         />
         {/* Molecule network top-right */}
         <img
           src={moleculeNetwork.src}
           alt=""
-          className="pointer-events-none absolute -top-20 -right-32 w-[400px] opacity-[0.08] select-none animate-slow-spin"
+          className="pointer-events-none absolute -top-10 -right-16 w-[200px] md:-top-16 md:-right-24 md:w-[300px] lg:-top-20 lg:-right-32 lg:w-[400px] opacity-[0.10] md:opacity-[0.10] lg:opacity-[0.08] select-none animate-slow-spin"
         />
 
         <div className="container relative">
           <div className="text-center mb-16">
             <SectionLabel>HOW WE WORK TOGETHER</SectionLabel>
-            <h2 className="text-3xl md:text-5xl font-bold mt-3">
+            <h2 className="text-2xl md:text-5xl font-bold mt-3">
               From Demo to <span className="accent-italic">Deployed in 4 Steps</span>
             </h2>
           </div>
@@ -199,9 +199,9 @@ export default function PricingContent() {
           {/* Steps with connecting line */}
           <div className="relative">
             {/* Horizontal connector line */}
-            <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-[2px] bg-white/20" />
+            <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-[2px] bg-white/20" />
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {deploySteps.map((step) => (
                 <div key={step.num} className="text-center relative">
                   <div className="h-16 w-16 rounded-full bg-primary mx-auto flex items-center justify-center text-primary-foreground font-bold text-2xl mb-5 relative z-10">
@@ -221,14 +221,14 @@ export default function PricingContent() {
         <div className="container">
           <div className="text-center mb-16">
             <SectionLabel>THE NUMBERS</SectionLabel>
-            <h2 className="text-3xl md:text-5xl font-bold mt-3">
+            <h2 className="text-2xl md:text-5xl font-bold mt-3">
               Results Our Clients <span className="accent-italic">Actually See</span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center border border-border rounded-2xl p-10">
-                <p className="text-6xl font-bold text-primary mb-3 font-heading italic">{stat.value}</p>
+              <div key={stat.label} className="text-center border border-border rounded-2xl p-6 md:p-10">
+                <p className="text-4xl md:text-6xl font-bold text-primary mb-3 font-heading italic">{stat.value}</p>
                 <p className="font-bold text-lg mb-2">{stat.label}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">{stat.desc}</p>
               </div>

@@ -128,7 +128,7 @@ export default function HowItWorksContent() {
         />
         <div className="container relative">
           <SectionLabel>HOW IT WORKS</SectionLabel>
-          <h1 className="text-4xl md:text-5xl font-bold mt-3 max-w-lg">
+          <h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg">
             From <span className="accent-italic">Setup to Insights</span> in Minutes, Not Months
           </h1>
           <p className="text-white/70 mt-4 max-w-xl">
@@ -149,22 +149,22 @@ export default function HowItWorksContent() {
 
           <div className="space-y-16">
             {steps.map((step) => (
-              <div key={step.num} className="flex gap-6 md:gap-8">
+              <div key={step.num} className="flex gap-4 md:gap-8">
                 {/* Step number + connector */}
                 <div className="flex flex-col items-center shrink-0">
-                  <div className="h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center">
-                    <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl shadow-lg">
+                  <div className="h-12 w-12 md:h-16 md:w-16 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div className="h-9 w-9 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-base md:text-xl shadow-lg">
                       {step.num}
                     </div>
                   </div>
-                  <div className="w-1 h-20 bg-gradient-to-b from-primary/30 to-transparent mt-2" />
+                  <div className="w-1 h-12 md:h-20 bg-gradient-to-b from-primary/30 to-transparent mt-2" />
                 </div>
 
                 {/* Step content card */}
-                <div className="flex-1 bg-white border border-border rounded-2xl p-6 md:p-8">
+                <div className="flex-1 bg-white border border-border rounded-2xl p-5 md:p-8">
                   <SectionLabel>{step.label}</SectionLabel>
-                  <h3 className="font-body font-bold text-2xl md:text-3xl mt-2 mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground mb-8 max-w-2xl leading-relaxed">{step.desc}</p>
+                  <h3 className="font-body font-bold text-xl md:text-3xl mt-2 mb-3">{step.title}</h3>
+                  <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8 max-w-2xl leading-relaxed">{step.desc}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {step.items.map((item) => (
                       <div key={item.title} className="bg-muted/40 border border-border/60 rounded-xl p-5 flex gap-4 items-center">
@@ -194,7 +194,7 @@ export default function HowItWorksContent() {
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-2xl px-8 py-1 bg-background shadow-sm">
+              <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-2xl px-5 md:px-8 py-1 bg-background shadow-sm">
                 <AccordionTrigger className="text-left font-semibold text-base hover:no-underline py-5">
                   {faq.q}
                 </AccordionTrigger>
