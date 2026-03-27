@@ -16,14 +16,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Install dependencies
-        run: yarn install
+        run: YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
 
       - name: Build Marketing Site
-        run: yarn build 
+        run: yarn build
 
       - name: Set Target Directory
         run: |
@@ -39,7 +36,7 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "out/*" 
+          source: "out/*"
           target: ${{ env.TARGET_DIR }}
           strip_components: 1
 
@@ -52,3 +49,28 @@ jobs:
           script: |
             chown -R www-data:www-data ${{ env.TARGET_DIR }}
             chmod -R 755 ${{ env.TARGET_DIR }}
+
+  create-release-pr:
+    needs: build-and-deploy
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create PR to main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          EXISTING_PR=$(gh pr list --base main --head staging --state open --json number --jq '.[0].number')
+          if [ -n "$EXISTING_PR" ]; then
+            echo "PR #$EXISTING_PR already exists — skipping"
+          else
+            gh pr create \
+              --base main \
+              --head staging \
+              --title "Release: staging → production" \
+              --body "Automated PR created after successful staging deployment."
+          fi
