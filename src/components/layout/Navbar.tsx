@@ -4,8 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "@/assets/logo-full.png";
+
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -18,6 +21,22 @@ const navLinks = [
 const Navbar = () => {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    fetch(`${API_URL}/auth/status`, { credentials: "include" })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.authenticated) {
+          setIsAuthenticated(true);
+          setUserName(data.user.firstName || "");
+        }
+      })
+      .catch(() => {
+        // Not authenticated — keep defaults
+      });
+  }, []);
 
   return (
     <nav className="sticky top-0 z-50 bg-white backdrop-blur border-b border-gray-100">
@@ -44,12 +63,22 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="outline" asChild className="rounded-lg px-6 py-5 text-[15px] border-primary text-primary hover:bg-primary/5">
-            <Link href="https://app.esghorizon.africa/login">Sign In</Link>
-          </Button>
-          <Button asChild className="rounded-lg px-6 py-5 text-[15px]">
-            <Link href="/contact">Request Demo</Link>
-          </Button>
+          {isAuthenticated ? (
+            <Button asChild className="rounded-lg px-6 py-5 text-[15px]">
+              <Link href={`${APP_URL}/dashboard`}>
+                {userName ? `${userName}'s Dashboard` : "Dashboard"}
+              </Link>
+            </Button>
+          ) : (
+            <>
+              <Button variant="outline" asChild className="rounded-lg px-6 py-5 text-[15px] border-primary text-primary hover:bg-primary/5">
+                <Link href={`${APP_URL}/login`}>Sign In</Link>
+              </Button>
+              <Button asChild className="rounded-lg px-6 py-5 text-[15px]">
+                <Link href="/contact">Request Demo</Link>
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -75,9 +104,22 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Button asChild className="w-full mt-2 rounded-lg">
-            <Link href="/contact" onClick={() => setMobileOpen(false)}>Request Demo</Link>
-          </Button>
+          {isAuthenticated ? (
+            <Button asChild className="w-full mt-2 rounded-lg">
+              <Link href={`${APP_URL}/dashboard`} onClick={() => setMobileOpen(false)}>
+                {userName ? `${userName}'s Dashboard` : "Dashboard"}
+              </Link>
+            </Button>
+          ) : (
+            <>
+              <Button variant="outline" asChild className="w-full mt-2 rounded-lg border-primary text-primary">
+                <Link href={`${APP_URL}/login`} onClick={() => setMobileOpen(false)}>Sign In</Link>
+              </Button>
+              <Button asChild className="w-full mt-2 rounded-lg">
+                <Link href="/contact" onClick={() => setMobileOpen(false)}>Request Demo</Link>
+              </Button>
+            </>
+          )}
         </div>
       )}
     </nav>
