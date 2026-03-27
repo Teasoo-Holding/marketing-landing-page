@@ -16,7 +16,7 @@ const highlights = [
 const WhoWeAreSection = () => (
   <section className="relative py-20 md:py-28 bg-muted/50 overflow-hidden">
     {/* Globe wireframe background — anchored to section bottom-right */}
-    <div className="pointer-events-none absolute right-[7%] -bottom-[50px] w-[680px] select-none">
+    <div className="pointer-events-none absolute right-[7%] -bottom-[50px] w-[320px] md:w-[480px] lg:w-[680px] select-none">
       <img
         src={globeWireframe.src}
         alt=""
@@ -25,10 +25,10 @@ const WhoWeAreSection = () => (
     </div>
 
     <div className="container relative">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
         <div>
           <SectionLabel>WHO WE ARE</SectionLabel>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold mt-3 mb-4 md:mb-6">
             Africa&apos;s ESG Platform with{" "}
             <span className="accent-italic">Global Standards</span>
           </h2>
@@ -46,7 +46,7 @@ const WhoWeAreSection = () => (
         </div>
         <div className="relative space-y-5">
           {highlights.map((item) => (
-            <div key={item.title} className="relative z-10 flex gap-4 bg-white rounded-xl border border-border/60 p-5 shadow-sm">
+            <div key={item.title} className="relative z-10 flex gap-3 md:gap-4 bg-white rounded-xl border border-border/60 p-5 md:p-6 shadow-sm">
               <div className="shrink-0 flex items-center justify-center h-11 w-11 bg-primary/10 rounded-xl">
                 <Image src={item.icon} alt="" width={24} height={24} className="w-6 h-6" />
               </div>

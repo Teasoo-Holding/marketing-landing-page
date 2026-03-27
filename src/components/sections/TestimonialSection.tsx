@@ -1,14 +1,14 @@
 import { Star } from "lucide-react";
 
 const TestimonialSection = () => (
-  <section className="py-20 md:py-28">
+  <section className="py-14 md:py-28">
     <div className="container max-w-3xl text-center">
       <div className="flex justify-center gap-1 mb-6">
         {[...Array(5)].map((_, i) => (
           <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
         ))}
       </div>
-      <blockquote className="font-heading text-xl md:text-2xl italic mb-8 text-muted-foreground">
+      <blockquote className="font-heading text-lg md:text-2xl italic mb-6 md:mb-8 text-muted-foreground">
         &quot;ESG Horizon reduced our reporting cycle from <span className="font-bold text-primary">8 weeks to 2 weeks</span>{" "}and gave us complete confidence in our disclosures. The automated calculations eliminated hours of manual work.&quot;
       </blockquote>
       <div className="flex items-center justify-center gap-3">
