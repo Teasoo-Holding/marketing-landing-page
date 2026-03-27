@@ -48,7 +48,7 @@ const WhoWeAreSection = () => (
           {highlights.map((item) => (
             <div key={item.title} className="relative z-10 flex gap-4 bg-white rounded-xl border border-border/60 p-5 shadow-sm">
               <div className="shrink-0 flex items-center justify-center h-11 w-11 bg-primary/10 rounded-xl">
-                <Image src={item.icon} alt="" width={24} height={24} className="w-auto h-auto" />
+                <Image src={item.icon} alt="" width={24} height={24} className="w-6 h-6" />
               </div>
               <div>
                 <h3 className="font-heading font-semibold mb-1">{item.title}</h3>

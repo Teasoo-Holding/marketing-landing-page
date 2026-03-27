@@ -8,16 +8,19 @@ import moleculeNetwork from "@/assets/ghg-molecule-network.svg";
 const tags = ["IFRS S1 & S2 Ready", "GHG Protocol Aligned", "Audit-Ready", "Enterprise Security"];
 
 const HeroSection = () => (
-  <section className="relative overflow-hidden bg-gradient-to-b from-[#f7fdfb] via-[#f0faf7] to-[#e8f6f2]">
+  <section className="relative overflow-hidden bg-gradient-to-b from-[#f7fdfb] via-[#f0faf7] to-[#e8f6f2] min-h-screen -mb-[100px]">
+    {/* Dark grayish gradient at bottom-right */}
+    <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/50 via-[#2a2a2a]/20 to-transparent pointer-events-none" />
+
     {/* Bottom-left decorative leaf */}
     <img
       src={leafNature.src}
       alt=""
-      className="pointer-events-none absolute -bottom-[60px] -left-8 w-[520px] opacity-[0.12] select-none animate-gentle-pulse"
+      className="pointer-events-none absolute bottom-0 -left-[120px] w-[700px] opacity-[0.12] select-none animate-gentle-pulse"
     />
 
     {/* Right-side molecule network */}
-    <div className="pointer-events-none absolute -right-40 top-[50%] -translate-y-1/2 w-[820px] select-none">
+    <div className="pointer-events-none absolute -right-40 top-[50%] -translate-y-1/2 w-[1100px] select-none">
       <img
         src={moleculeNetwork.src}
         alt=""
@@ -76,17 +79,19 @@ const HeroSection = () => (
         </div>
 
         {/* Right — dashboard mockup */}
-        <div className="hidden lg:flex justify-end relative">
-          {/* Shadow background extending to section bottom */}
-          <div className="absolute -right-24 top-1/4 -bottom-48 -left-32 rounded-3xl bg-gradient-to-bl from-primary/[0.06] via-primary/[0.04] to-transparent blur-2xl pointer-events-none" />
+        <div className="hidden lg:flex justify-end relative" style={{ maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)" }}>
           <img
             src={heroSvg.src}
             alt="ESG Horizon Dashboard — GHG emissions, scope breakdown, and reduction targets"
-            className="relative w-[110%] max-w-none scale-105 animate-float"
+            className="relative max-w-none animate-float mt-16"
+            style={{ width: "160%", maxWidth: "none" }}
           />
         </div>
       </div>
     </div>
+
+    {/* Bottom gradient blending into dark Problem section */}
+    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#1a1a1a] pointer-events-none" />
   </section>
 );
 
