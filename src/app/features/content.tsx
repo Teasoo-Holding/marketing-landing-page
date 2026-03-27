@@ -68,7 +68,7 @@ export default function FeaturesContent() {
         <div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
             <SectionLabel>PLATFORM FEATURES</SectionLabel>
-            <h1 className="text-4xl md:text-5xl font-bold mt-3 max-w-lg text-foreground">
+            <h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg text-foreground">
               Everything You Need to{" "}
               <span className="accent-italic">Lead on ESG</span>
             </h1>
@@ -76,11 +76,11 @@ export default function FeaturesContent() {
               Powerful features designed for modern sustainability reporting across Africa — from data collection to board-ready disclosure.
             </p>
           </div>
-          <div className="hidden lg:flex justify-center">
+          <div className="absolute right-[-60px] top-1/2 -translate-y-1/2 lg:relative lg:right-auto lg:top-auto lg:translate-y-0 flex justify-center pointer-events-none">
             <img
               src={compactAtomNetwork.src}
               alt=""
-              className="w-[420px] opacity-[0.18] animate-slow-spin select-none pointer-events-none"
+              className="w-[250px] md:w-[350px] lg:w-[420px] opacity-[0.12] lg:opacity-[0.18] animate-slow-spin select-none pointer-events-none"
             />
           </div>
         </div>
@@ -99,11 +99,11 @@ export default function FeaturesContent() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {features.map((f) => (
               <div
                 key={f.title}
-                className={`rounded-2xl p-8 hover:shadow-lg transition-shadow border border-border ${
+                className={`rounded-2xl p-5 md:p-8 hover:shadow-lg transition-shadow border border-border ${
                   f.badge ? "border-t-[3px] border-t-primary" : ""
                 }`}
               >
@@ -115,7 +115,7 @@ export default function FeaturesContent() {
                 <div className="mb-4">
                   <img src={f.iconSrc.src} alt={f.title} className="h-10 w-10" />
                 </div>
-                <h3 className="font-bold text-2xl mb-3">{f.title}</h3>
+                <h3 className="font-bold text-xl md:text-2xl mb-3">{f.title}</h3>
                 <p className="text-base text-muted-foreground mb-8 leading-relaxed">{f.desc}</p>
                 <ul className="space-y-4">
                   {f.bullets.map((b) => (
@@ -132,12 +132,12 @@ export default function FeaturesContent() {
       </section>
 
       {/* Compliance Engine */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 overflow-hidden md:overflow-visible">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionLabel>IFRS COMPLIANCE ENGINE</SectionLabel>
-              <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
+              <h2 className="text-2xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
                 From Gap Assessment to{" "}
                 <span className="accent-italic">Global Report</span>
               </h2>
@@ -161,8 +161,8 @@ export default function FeaturesContent() {
               </ul>
             </div>
             <div>
-              <div className="animate-float">
-                <img src={dashboardMockup.src} alt="ESG Assessment Report" className="w-full scale-[1.4] origin-center" />
+              <div className="animate-float relative -mx-6 lg:mx-0" style={{ maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)" }}>
+                <img src={dashboardMockup.src} alt="ESG Assessment Report" className="max-w-none w-[140vw] -ml-[30vw] lg:w-full lg:ml-0 lg:scale-[1.4] origin-center" />
               </div>
             </div>
           </div>
@@ -170,17 +170,17 @@ export default function FeaturesContent() {
       </section>
 
       {/* Automated GHG Calculations */}
-      <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="animate-float">
-                <img src={ghgCalcSvg.src} alt="GHG Emissions Dashboard" className="w-full scale-[1.6] origin-center" />
+      <section className="py-20 md:py-28 bg-muted/30 overflow-hidden">
+        <div className="container overflow-visible">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center overflow-visible">
+            <div className="order-2 lg:order-1 overflow-visible">
+              <div className="animate-float relative -mx-6 lg:mx-0" style={{ maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)" }}>
+                <img src={ghgCalcSvg.src} alt="GHG Emissions Dashboard" className="max-w-none w-[140vw] -ml-[12vw] lg:w-full lg:ml-0 lg:scale-[1.6] origin-center" />
               </div>
             </div>
             <div className="order-1 lg:order-2">
               <SectionLabel>AUTOMATED GHG CALCULATIONS</SectionLabel>
-              <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
+              <h2 className="text-2xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
                 Input Data.{" "}
                 <span className="accent-italic">Get Certified Figures.</span>
               </h2>
@@ -221,7 +221,7 @@ export default function FeaturesContent() {
           <p className="text-white/70 mb-8 max-w-lg mx-auto">
             See how ESG Horizon fits your organisation in a personalised 30-minute walkthrough.
           </p>
-          <Button size="lg" asChild className="bg-white text-primary hover:bg-white/90 rounded-lg px-8 py-6 text-base font-semibold">
+          <Button size="lg" asChild className="bg-white text-primary hover:bg-white/90 rounded-lg px-5 py-4 md:px-8 md:py-6 text-sm md:text-base font-semibold">
             <Link href="/contact">Request Your Personalised Demo</Link>
           </Button>
         </div>
