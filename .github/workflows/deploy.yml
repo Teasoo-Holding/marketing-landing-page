@@ -16,17 +16,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Install dependencies
-        run: yarn install
+        run: npm install --force
 
       - name: Build Marketing Site
-        run: yarn build 
-        env:
-          NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL }}
-          NODE_ENV: production
+        run: npm run build
 
       - name: Set Target Directory
         run: |
@@ -37,15 +31,12 @@ jobs:
           fi
 
       - name: Deploy to VPS
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SERVER_IP }}
-          debug: true
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          timeout: 60s
-          source: "out/*" 
+          source: "out/*"
           target: ${{ env.TARGET_DIR }}
           strip_components: 1
 
