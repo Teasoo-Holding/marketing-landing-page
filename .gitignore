@@ -11,6 +11,7 @@ dist
 
 # Lock files
 package-lock.json
+yarn.lock
 pnpm-lock.yaml
 bun.lock
 bun.lockb
