@@ -37,7 +37,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-white/10 mt-10 md:mt-14 pt-6 flex flex-col md:flex-row items-center justify-between text-xs md:text-sm text-white/60 gap-3 md:gap-0">
-        <span>&copy; 2025 ESG Horizon. All rights reserved.</span>
+        <span>&copy; {new Date().getFullYear()} ESG Horizon. All rights reserved.</span>
         <div className="flex gap-6">
           <Link href="/" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link href="/" className="hover:text-white transition-colors">Terms of Service</Link>
