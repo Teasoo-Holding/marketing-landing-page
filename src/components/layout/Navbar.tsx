@@ -41,7 +41,7 @@ function useAuthStatus() {
 /** Desktop navbar — rendered before page content */
 const Navbar = () => {
   const pathname = usePathname();
-  const { isAuthenticated, userName } = useAuthStatus();
+  const { isAuthenticated } = useAuthStatus();
 
   return (
     <nav className="hidden lg:block sticky top-0 z-50 bg-white backdrop-blur border-b border-gray-100">
@@ -70,7 +70,7 @@ const Navbar = () => {
           {isAuthenticated ? (
             <Button asChild className="rounded-lg px-6 py-5 text-[15px]">
               <Link href={`${APP_URL}/dashboard`}>
-                {userName ? `${userName}'s Dashboard` : "Dashboard"}
+                Go to Dashboard
               </Link>
             </Button>
           ) : (
@@ -94,7 +94,7 @@ export const MobileNav = () => {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { isAuthenticated, userName } = useAuthStatus();
+  const { isAuthenticated } = useAuthStatus();
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -149,7 +149,7 @@ export const MobileNav = () => {
               {isAuthenticated ? (
                 <Button asChild className="w-full rounded-lg py-5 text-sm">
                   <Link href={`${APP_URL}/dashboard`} onClick={() => setMobileOpen(false)}>
-                    {userName ? `${userName}'s Dashboard` : "Dashboard"}
+                    Go to Dashboard
                   </Link>
                 </Button>
               ) : (
