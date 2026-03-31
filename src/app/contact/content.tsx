@@ -15,7 +15,14 @@ import iconBullseye from "@/assets/Bullseye.svg";
 import iconBusiness from "@/assets/Business.svg";
 import iconUserManual from "@/assets/User_Manual.svg";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
+
+const REQUEST_TYPES = [
+  { value: "demo", label: "Book a Demo" },
+  { value: "quote", label: "Request a Custom Quote" },
+  { value: "support", label: "Support" },
+] as const;
 
 const expectations = [
 	{
@@ -44,8 +51,13 @@ const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export default function ContactContent() {
   const { toast } = useToast();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [sectors, setSectors] = useState<string[]>([]);
+
+  const typeParam = searchParams.get("type");
+  const initialType = REQUEST_TYPES.some((t) => t.value === typeParam) ? typeParam! : "demo";
+  const [requestType, setRequestType] = useState(initialType);
 
   useEffect(() => {
     fetch(`${API_BASE}/industries/sectors`)
@@ -56,9 +68,12 @@ export default function ContactContent() {
 
   const [industry, setIndustry] = useState("");
   const [orgSize, setOrgSize] = useState("");
+  const [attempted, setAttempted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setAttempted(true);
+    if (!industry) return;
     setLoading(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -68,6 +83,7 @@ export default function ContactContent() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          requestType,
           firstName: formData.get("firstName"),
           lastName: formData.get("lastName"),
           email: formData.get("email"),
@@ -85,10 +101,17 @@ export default function ContactContent() {
         return;
       }
 
-      toast({ title: "Demo requested!", description: "We\u2019ll be in touch within one business day." });
+      const successMessages: Record<string, string> = {
+        demo: "Demo requested! We\u2019ll be in touch within one business day.",
+        quote: "Quote requested! We\u2019ll send a custom proposal within one business day.",
+        support: "Support request received! We\u2019ll get back to you shortly.",
+      };
+      toast({ title: "Request submitted!", description: successMessages[requestType] });
       form.reset();
       setIndustry("");
       setOrgSize("");
+      setRequestType("demo");
+      setAttempted(false);
     } catch {
       toast({ title: "Network error", description: "Please check your connection and try again.", variant: "destructive" });
     } finally {
@@ -144,9 +167,28 @@ export default function ContactContent() {
             </div>
 
             <div className="border border-border rounded-xl p-5 md:p-8">
-              <h3 className="font-body font-bold text-2xl md:text-3xl mb-2 tracking-tight">Book Your Demo</h3>
+              <h3 className="font-body font-bold text-2xl md:text-3xl mb-2 tracking-tight">Get in Touch</h3>
               <p className="text-sm text-muted-foreground mb-6">We&apos;ll be in touch within one business day.</p>
               <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="text-sm font-medium mb-2 block">What can we help you with? *</label>
+                  <div className="flex flex-wrap gap-2">
+                    {REQUEST_TYPES.map((t) => (
+                      <button
+                        key={t.value}
+                        type="button"
+                        onClick={() => setRequestType(t.value)}
+                        className={`rounded-full px-4 py-2 text-sm font-medium border transition-colors ${
+                          requestType === t.value
+                            ? "bg-primary text-white border-primary"
+                            : "bg-background text-muted-foreground border-border hover:border-primary/50"
+                        }`}
+                      >
+                        {t.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-1 block">First Name *</label>
@@ -168,8 +210,10 @@ export default function ContactContent() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-1 block">Industry *</label>
-                    <Select value={industry} onValueChange={setIndustry} required>
-                      <SelectTrigger><SelectValue placeholder="Select Industry" /></SelectTrigger>
+                    <Select value={industry} onValueChange={setIndustry}>
+                      <SelectTrigger className={attempted && !industry ? "border-red-500" : ""}>
+                        <SelectValue placeholder="Select Industry" />
+                      </SelectTrigger>
                       <SelectContent>
                         {sectors.map((s) => (
                           <SelectItem key={s} value={s}>{s}</SelectItem>
@@ -177,6 +221,9 @@ export default function ContactContent() {
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
+                    {attempted && !industry && (
+                      <p className="text-xs text-red-500 mt-1">Please select an industry</p>
+                    )}
                   </div>
                   <div>
                     <label className="text-sm font-medium mb-1 block">Organization Size</label>
@@ -196,7 +243,13 @@ export default function ContactContent() {
                   <Textarea name="challenge" placeholder="e.g. We have 12 subsidiaries and no central data collection..." rows={4} />
                 </div>
                 <Button type="submit" size="lg" className="w-full" disabled={loading}>
-                  {loading ? "Submitting..." : "Request My Personalised Demo \u2192"}
+                  {loading
+                    ? "Submitting..."
+                    : requestType === "quote"
+                      ? "Request My Custom Quote \u2192"
+                      : requestType === "support"
+                        ? "Submit Support Request \u2192"
+                        : "Request My Personalised Demo \u2192"}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">
                   Your data is safe with us. We never share your information with third parties.

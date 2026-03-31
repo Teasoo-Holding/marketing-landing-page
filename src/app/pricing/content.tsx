@@ -129,13 +129,13 @@ export default function PricingContent() {
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                   <Link
-                    href="/contact"
+                    href="/contact?type=quote"
                     className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold rounded-lg px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base hover:bg-white/90 transition-colors"
                   >
                     Get a Custom Quote <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/contact?type=demo"
                     className="inline-flex items-center justify-center gap-2 border border-white/50 text-white font-semibold rounded-lg px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base hover:border-white hover:bg-white/10 transition-colors"
                   >
                     Book a Demo
