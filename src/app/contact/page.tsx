@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Book a personalised ESG Horizon demo. Get a tailored walkthrough, custom proposal within 24 hours, and guided onboarding — no generic product tours.",
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "/contact/" },
 };
 
 export default function ContactPage() {
