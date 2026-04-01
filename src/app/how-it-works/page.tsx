@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "How It Works",
   description:
     "Set up your company, invite your team, and generate audit-ready ESG reports in 3 simple steps. No prior ESG knowledge required.",
-  alternates: { canonical: "/how-it-works" },
+  alternates: { canonical: "/how-it-works/" },
 };
 
 export default function HowItWorksPage() {

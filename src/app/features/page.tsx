@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Features",
   description:
     "Explore ESG Horizon's powerful features — IFRS S1 & S2 compliance engine, automated GHG calculations, visual dashboards, and audit-ready report generation.",
-  alternates: { canonical: "/features" },
+  alternates: { canonical: "/features/" },
 };
 
 export default function FeaturesPage() {

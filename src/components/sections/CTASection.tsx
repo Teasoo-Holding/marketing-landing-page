@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import bubbleRings from "@/assets/bubble-rings.svg";
 
 const CTASection = () => (
-  <section className="relative bg-primary py-20 md:py-24 overflow-hidden">
+  <section aria-label="Call to action" className="relative bg-primary py-20 md:py-24 overflow-hidden">
     {/* Decorative bubble rings background */}
     <img
       src={bubbleRings.src}
