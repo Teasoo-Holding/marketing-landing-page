@@ -10,7 +10,7 @@ const TestimonialSection = () => (
 			</div>
 			<blockquote className="font-heading text-lg md:text-2xl italic mb-6 md:mb-8 text-foreground">
 				&quot;ESG Horizon reduced our reporting cycle from{" "}
-				<span className="font-bold text-primary">8 weeks to 2 weeks</span> and
+				<span className="font-bold text-primary">8 weeks to 2 weeks &nbsp;</span> and
 				gave us complete confidence in our disclosures. The automated
 				calculations eliminated hours of manual work.&quot;
 			</blockquote>

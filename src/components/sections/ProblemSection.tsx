@@ -44,7 +44,7 @@ const ProblemSection = () => (
 		/>
 
 		<div className="container relative">
-			<span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#20a79c]">
+			<span className="text-xs font-extrabold tracking-[0.2em] uppercase text-teal-400">
 				THE PROBLEM
 			</span>
 			<h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6 text-white font-body leading-[1.1]">
@@ -52,7 +52,7 @@ const ProblemSection = () => (
 				<br />
 				<span className="accent-italic">Start Leading on ESG</span>
 			</h2>
-			<p className="text-base md:text-xl text-white/70 max-w-2xl mb-10 md:mb-14 leading-relaxed">
+			<p className="text-base md:text-xl text-white max-w-2xl mb-10 md:mb-14 leading-relaxed">
 				For most organisations, ESG reporting is a manual, error-prone
 				nightmare. Here&apos;s what that looks like:
 			</p>
@@ -73,7 +73,7 @@ const ProblemSection = () => (
 							<h3 className="font-body font-semibold text-lg mb-1 text-white">
 								{item.title}
 							</h3>
-							<p className="text-sm text-white/70">{item.desc}</p>
+							<p className="text-sm text-white">{item.desc}</p>
 						</div>
 					</div>
 				))}
@@ -84,7 +84,7 @@ const ProblemSection = () => (
 						This outdated approach wastes weeks of effort and exposes your
 						company to errors.
 					</p>
-					<p className="text-primary text-sm mt-1">
+					<p className="text-teal-400 font-bold text-sm mt-1">
 						ESG Horizon replaces compromise with confidence.
 					</p>
 				</div>
