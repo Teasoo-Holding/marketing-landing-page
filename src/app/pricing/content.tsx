@@ -202,12 +202,12 @@ export default function PricingContent() {
 								<h3 className="font-bold text-2xl md:text-3xl mb-4">
 									Get a Personalised Plan
 								</h3>
-								<p className="text-primary-foreground/80 mb-4 text-base leading-relaxed">
+								<p className="text-white mb-4 text-base leading-relaxed">
 									Tell us about your organisation in a 30-minute demo.
 									We&apos;ll show you exactly what ESG Horizon can do — then
 									tailor a proposal just for you.
 								</p>
-								<p className="text-primary-foreground/60 mb-8 text-sm">
+								<p className="text-white mb-8 text-sm">
 									All proposals quoted in USD. Local currency invoicing
 									available on request.
 								</p>
@@ -249,7 +249,7 @@ export default function PricingContent() {
 									</Link>
 									<Link
 										href="/contact?type=demo"
-										className="inline-flex items-center justify-center gap-2 border border-white/50 text-white font-semibold rounded-lg px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base hover:border-white hover:bg-white/10 transition-colors"
+										className="inline-flex items-center justify-center gap-2 border border-white/50 text-white font-semibold rounded-lg px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base hover:border-amber-400 hover:text-amber-400 transition-colors"
 									>
 										Book a Demo
 									</Link>
@@ -314,7 +314,7 @@ export default function PricingContent() {
 
 				<div className="container relative">
 					<div className="text-center mb-16">
-						<SectionLabel>HOW WE WORK TOGETHER</SectionLabel>
+						<span className="text-xs font-extrabold tracking-[0.2em] uppercase text-teal-400">HOW WE WORK TOGETHER</span>
 						<h2 className="text-2xl md:text-5xl font-bold mt-3">
 							From Demo to{" "}
 							<span className="accent-italic">Deployed in 4 Steps</span>

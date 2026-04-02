@@ -86,7 +86,7 @@ const Navbar = () => {
 							<Button
 								variant="outline"
 								asChild
-								className="rounded-lg px-6 py-5 text-[15px] border-primary text-primary hover:bg-primary/5"
+								className="rounded-lg px-6 py-5 text-[15px] border-primary text-primary"
 							>
 								<Link href={`${APP_URL}/login`}>Sign In</Link>
 							</Button>

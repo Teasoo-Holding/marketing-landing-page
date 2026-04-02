@@ -71,7 +71,11 @@
 	}
 
 	.section-label {
-		@apply text-xs font-semibold tracking-[0.2em] uppercase text-primary;
+		@apply text-xs font-extrabold tracking-[0.2em] uppercase text-primary;
+	}
+
+	.section-label-dark {
+		@apply text-teal-400;
 	}
 
 	.hero-dark {

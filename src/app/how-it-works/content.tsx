@@ -150,12 +150,12 @@ export default function HowItWorksContent() {
 					className="pointer-events-none absolute right-0 top-0 h-full w-auto opacity-[0.12] select-none animate-slow-spin"
 				/>
 				<div className="container relative">
-					<SectionLabel>HOW IT WORKS</SectionLabel>
+					<SectionLabel dark>HOW IT WORKS</SectionLabel>
 					<h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg">
 						From <span className="accent-italic">Setup to Insights</span> in
 						Minutes, Not Months
 					</h1>
-					<p className="text-white/70 mt-4 max-w-xl">
+					<p className="text-white mt-4 max-w-xl">
 						ESG Horizon is designed so your team can be collecting real ESG data
 						within hours of signing up — no consultants, no training marathons.
 					</p>
