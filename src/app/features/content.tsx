@@ -321,7 +321,7 @@ export default function FeaturesContent() {
 						<br />
 						ESG Reporting Process
 					</h2>
-					<p className="text-white/70 mb-8 max-w-lg mx-auto">
+					<p className="text-white mb-8 max-w-lg mx-auto">
 						See how ESG Horizon fits your organisation in a personalised
 						30-minute walkthrough.
 					</p>

@@ -161,12 +161,12 @@ export default function ContactContent() {
 				/>
 				<div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 					<div>
-						<SectionLabel>GET IN TOUCH</SectionLabel>
+						<SectionLabel dark>GET IN TOUCH</SectionLabel>
 						<h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg leading-tight">
 							Ready to Transform Your{" "}
 							<span className="accent-italic">ESG Journey?</span>
 						</h1>
-						<p className="text-white/70 mt-4 max-w-xl text-lg leading-relaxed">
+						<p className="text-white mt-4 max-w-xl text-lg leading-relaxed">
 							Book a personalised walkthrough and discover exactly how ESG
 							Horizon fits your organisation. No generic demos — a focused
 							conversation about your specific challenges.
@@ -466,7 +466,7 @@ export default function ContactContent() {
 				<div className="container relative">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 						<div>
-							<span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/70">
+							<span className="text-xs font-extrabold tracking-[0.2em] uppercase text-white/70">
 								OUR PRESENCE
 							</span>
 							<h2 className="font-body text-2xl md:text-4xl font-bold mt-3 mb-6 leading-tight">
@@ -476,18 +476,18 @@ export default function ContactContent() {
 									Connected to the World
 								</span>
 							</h2>
-							<p className="text-white/70 mb-4 text-sm leading-relaxed">
+							<p className="text-white mb-4 text-sm leading-relaxed">
 								An African-centred ESG platform with global connectivity,
 								developed by ESG and data experts in partnership with
 								governments, regulators, and academia across the continent.
 							</p>
-							<p className="text-white/70 mb-4 text-sm leading-relaxed">
+							<p className="text-white mb-4 text-sm leading-relaxed">
 								Our mission is to drive sustainable development across Africa by
 								providing organisations, investors, and regulators with the
 								insights and tools needed to foster responsible and transparent
 								ESG practices.
 							</p>
-							<p className="text-white/70 text-sm leading-relaxed">
+							<p className="text-white text-sm leading-relaxed">
 								We bridge the gap between local and global ESG standards —
 								empowering Africa&apos;s place in the global sustainability
 								conversation.
@@ -512,7 +512,7 @@ export default function ContactContent() {
 										alt=""
 										className="h-10 w-10 md:h-14 md:w-14"
 									/>
-									<p className="text-sm text-white/70">{item.title}</p>
+									<p className="text-sm text-white">{item.title}</p>
 								</div>
 							))}
 						</div>

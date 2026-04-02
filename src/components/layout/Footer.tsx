@@ -12,7 +12,7 @@ const Footer = () => (
           <p className="text-sm text-white/80 leading-relaxed">
             The one-stop platform for ESG reporting in Nigeria and across Africa. Automated, compliant, and audit-ready.
           </p>
-          {/* Social links */}
+          {/* Social links — commented out until accounts are ready
           <div className="flex gap-4 mt-5">
             <a
               href="https://www.linkedin.com/company/esghorizon"
@@ -33,12 +33,13 @@ const Footer = () => (
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
           </div>
+          */}
         </div>
 
         {/* Link columns — side-by-side, pushed right on lg+ */}
         <div className="flex justify-between lg:gap-24">
           <div>
-            <h2 className="font-body font-semibold text-xs tracking-[0.15em] uppercase text-white/70 mb-4">PRODUCT</h2>
+            <h2 className="font-body font-extrabold text-xs tracking-[0.15em] uppercase text-white/70 mb-4">PRODUCT</h2>
             <ul className="space-y-3 text-sm text-white/85">
               <li><Link href="/features" className="hover:text-white transition-colors">Features</Link></li>
               <li><Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
@@ -46,7 +47,7 @@ const Footer = () => (
             </ul>
           </div>
           <div>
-            <h2 className="font-body font-semibold text-xs tracking-[0.15em] uppercase text-white/70 mb-4">COMPANY</h2>
+            <h2 className="font-body font-extrabold text-xs tracking-[0.15em] uppercase text-white/70 mb-4">COMPANY</h2>
             <ul className="space-y-3 text-sm text-white/85">
               <li><Link href="/#who-we-are" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>

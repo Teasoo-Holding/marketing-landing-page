@@ -71,7 +71,7 @@ const HeroSection = () => (
 							size="lg"
 							variant="outline"
 							asChild
-							className="rounded-lg px-3 py-3 text-xs md:px-8 md:py-6 md:text-base border-primary text-primary hover:border-amber-400 hover:text-amber-400 transition-colors"
+							className="rounded-lg px-3 py-3 text-xs md:px-8 md:py-6 md:text-base border-primary text-primary"
 						>
 							<Link href="/features">
 								Explore Features <ArrowRight className="ml-2 h-4 w-4" />
