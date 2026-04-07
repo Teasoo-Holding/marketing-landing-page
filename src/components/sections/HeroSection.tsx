@@ -15,7 +15,7 @@ const tags = [
 const HeroSection = () => (
 	<section
 		aria-label="Hero"
-		className="relative overflow-hidden bg-gradient-to-b from-[#f7fdfb] via-[#f0faf7] to-[#e8f6f2] min-h-screen -mb-[60px] md:-mb-[100px]"
+		className="relative overflow-hidden bg-gradient-to-b from-[#f7fdfb] via-[#f0faf7] to-[#e8f6f2] min-h-screen md:-mb-[100px]"
 	>
 		{/* Dark grayish gradient at bottom-right */}
 		<div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/50 via-[#2a2a2a]/20 to-transparent pointer-events-none" />
@@ -36,16 +36,16 @@ const HeroSection = () => (
 			/>
 		</div>
 
-		<div className="relative pt-12 pb-8 md:pt-8 md:pb-24 lg:pt-6 px-6 md:px-10 lg:px-16 xl:px-24">
+		<div className="container relative pt-12 pb-8 md:pt-8 md:pb-24 lg:pt-6">
 			<div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-6 md:gap-10 items-center">
 				{/* Left content */}
 				<div>
-					<span className="inline-flex items-center gap-2 text-sm font-medium border border-primary/30 rounded-full px-4 py-1.5 mb-6 text-black font-extrabold bg-white">
+					<span className="inline-flex items-center gap-2 text-xs md:text-body-sm whitespace-nowrap font-medium border border-primary/30 rounded-full px-2.5 py-1 md:px-4 md:py-1.5 mb-6 text-black font-extrabold bg-white">
 						<span className="h-2 w-2 rounded-full bg-primary" />
 						Nigeria&apos;s #1 IFRS-Ready ESG Platform
 					</span>
 
-					<h1 className="text-[2.5rem] md:text-6xl lg:text-[4.25rem] font-bold leading-[1.08] mb-6 text-foreground tracking-tight font-body">
+					<h1 className="heading-display mb-6 text-foreground">
 						Cut ESG
 						<br />
 						Reporting Time
@@ -53,25 +53,21 @@ const HeroSection = () => (
 						by <span className="accent-italic">Up to 60%</span>
 					</h1>
 
-					<p className="text-base md:text-lg text-foreground mb-8 max-w-[480px] leading-relaxed">
+					<p className="text-body-lg text-foreground mb-8 max-w-[480px] lg:max-w-[clamp(480px,36vw,720px)]">
 						Automate disclosures, reduce compliance risk, and gain a single
 						source of truth for ESG data — built for African regulatory
 						realities.
 					</p>
 
 					<div className="flex gap-2 md:gap-4 mb-8">
-						<Button
-							size="lg"
-							asChild
-							className="rounded-lg px-3 py-3 text-xs md:px-8 md:py-6 md:text-base"
-						>
+						<Button size="lg" asChild className="rounded-lg px-4 md:px-8">
 							<Link href="/contact">Request Your Demo</Link>
 						</Button>
 						<Button
 							size="lg"
 							variant="outline"
 							asChild
-							className="rounded-lg px-3 py-3 text-xs md:px-8 md:py-6 md:text-base border-primary text-primary"
+							className="rounded-lg border-primary text-primary px-4 md:px-8"
 						>
 							<Link href="/features">
 								Explore Features <ArrowRight className="ml-2 h-4 w-4" />
@@ -79,11 +75,11 @@ const HeroSection = () => (
 						</Button>
 					</div>
 
-					<div className="flex flex-wrap gap-2 md:gap-3">
+					<div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
 						{tags.map((tag) => (
 							<span
 								key={tag}
-								className="inline-flex items-center gap-1.5 text-xs md:text-sm border border-border rounded-full px-2.5 py-1.5 md:px-4 md:py-2 text-foreground font-bold bg-white"
+								className="inline-flex items-center justify-center md:justify-start gap-1.5 text-xs md:text-body-sm whitespace-nowrap border border-border rounded-full px-2 py-1.5 md:px-4 md:py-2 text-foreground font-bold bg-white"
 							>
 								<span className="h-1.5 w-1.5 rounded-full bg-primary" />
 								{tag}
@@ -94,7 +90,7 @@ const HeroSection = () => (
 
 				{/* Right — dashboard mockup */}
 				<div
-					className="relative -mx-6 lg:mx-0 overflow-visible"
+					className="relative overflow-hidden lg:overflow-visible"
 					style={{
 						maskImage:
 							"linear-gradient(to bottom, black 50%, transparent 100%)",
@@ -105,14 +101,14 @@ const HeroSection = () => (
 					<img
 						src={heroSvg.src}
 						alt="ESG Horizon Dashboard — GHG emissions, scope breakdown, and reduction targets"
-						className="relative max-w-none animate-float mt-4 md:mt-8 lg:mt-16 w-[140vw] md:w-[110%] lg:w-full -ml-[30vw] md:-ml-[5%] lg:ml-0"
+						className="relative max-w-full animate-float mt-4 md:mt-8 lg:mt-16 w-full"
 					/>
 				</div>
 			</div>
 		</div>
 
 		{/* Bottom gradient blending into dark Problem section */}
-		<div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#1a1a1a] pointer-events-none" />
+		<div className="hidden md:block absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#1a1a1a] pointer-events-none" />
 	</section>
 );
 
