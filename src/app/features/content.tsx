@@ -1,6 +1,6 @@
 import iconAbacus from "@/assets/Abacus.svg";
 import bubbleRings from "@/assets/bubble-rings.svg";
-import ghgCalcSvg from "@/assets/C.svg";
+import ghgCalcSvg from "@/assets/hero.svg";
 import iconComboChart from "@/assets/Combo_Chart.svg";
 import compactAtomNetwork from "@/assets/compact-atom-network.svg";
 import iconDatabase from "@/assets/Database.svg";
@@ -103,18 +103,18 @@ export default function FeaturesContent() {
 	return (
 		<>
 			{/* Hero */}
-			<section className="relative overflow-hidden bg-gradient-to-b from-[#f7fdfb] via-[#f0faf7] to-[#e8f6f2] py-20 md:py-28">
+			<section className="relative overflow-hidden bg-gradient-to-b from-[#f7fdfb] via-[#f0faf7] to-[#e8f6f2] py-section-y">
 				{/* Gradient overlay fading right edge */}
 				<div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-[#e8f6f2]/60" />
 
 				<div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 					<div>
 						<SectionLabel>PLATFORM FEATURES</SectionLabel>
-						<h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg text-foreground">
+						<h1 className="heading-h1 mt-3 max-w-lg text-foreground">
 							Everything You Need to{" "}
 							<span className="accent-italic">Lead on ESG</span>
 						</h1>
-						<p className="text-foreground mt-4 max-w-xl">
+						<p className="text-body-lg text-foreground mt-4 max-w-xl">
 							Powerful features designed for modern sustainability reporting
 							across Africa — from data collection to board-ready disclosure.
 						</p>
@@ -130,15 +130,15 @@ export default function FeaturesContent() {
 			</section>
 
 			{/* Core Features */}
-			<section className="py-20 md:py-28 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]">
+			<section className="py-section-y shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]">
 				<div className="container">
 					<div className="text-center mb-16">
 						<SectionLabel>CORE CAPABILITIES</SectionLabel>
-						<h2 className="text-3xl md:text-4xl font-bold mt-3">
+						<h2 className="heading-h2 mt-3">
 							Built for{" "}
 							<span className="accent-italic">Measurable ESG Performance</span>
 						</h2>
-						<p className="text-foreground mt-3 max-w-md mx-auto">
+						<p className="text-body text-foreground mt-3 max-w-md mx-auto">
 							Every feature is designed to reduce effort, increase accuracy, and
 							ensure your disclosures stand up to scrutiny.
 						</p>
@@ -148,12 +148,12 @@ export default function FeaturesContent() {
 						{features.map((f) => (
 							<div
 								key={f.title}
-								className={`rounded-2xl p-5 md:p-8 hover:shadow-lg transition-shadow border border-border ${
+								className={`rounded-2xl p-card-p hover:shadow-lg transition-shadow border border-border ${
 									f.badge ? "border-t-[3px] border-t-primary" : ""
 								}`}
 							>
 								{f.badge && (
-									<span className="text-[10px] font-bold tracking-wider border border-primary/40 text-primary px-3 py-1 rounded-full mb-5 inline-block">
+									<span className="text-eyebrow font-bold border border-primary/40 text-primary px-3 py-1 rounded-full mb-5 inline-block">
 										{f.badge}
 									</span>
 								)}
@@ -164,15 +164,15 @@ export default function FeaturesContent() {
 										className="h-10 w-10"
 									/>
 								</div>
-								<h3 className="font-bold text-xl md:text-2xl mb-3">
+								<h3 className="heading-h3 mb-3">
 									{f.title}
 								</h3>
-								<p className="text-base text-foreground mb-8 leading-relaxed">
+								<p className="text-body text-foreground mb-8">
 									{f.desc}
 								</p>
 								<ul className="space-y-4">
 									{f.bullets.map((b) => (
-										<li key={b} className="flex items-center gap-3 text-[15px]">
+										<li key={b} className="flex items-center gap-3 text-body">
 											<span className="h-5 w-5 rounded-full border-2 border-primary/30 shrink-0" />
 											<span>{b}</span>
 										</li>
@@ -185,16 +185,16 @@ export default function FeaturesContent() {
 			</section>
 
 			{/* Compliance Engine */}
-			<section className="py-20 md:py-28 overflow-hidden md:overflow-visible">
+			<section className="py-section-y overflow-hidden md:overflow-visible">
 				<div className="container">
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+					<div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-16 items-center">
 						<div>
 							<SectionLabel>IFRS COMPLIANCE ENGINE</SectionLabel>
-							<h2 className="text-2xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
+							<h2 className="heading-h2 mt-3 mb-6">
 								From Gap Assessment to{" "}
 								<span className="accent-italic">Global Report</span>
 							</h2>
-							<p className="text-foreground mb-8 text-lg leading-relaxed">
+							<p className="text-body-lg text-foreground mb-8">
 								The IFRS compliance engine continuously checks your disclosures
 								against S1 and S2 requirements, flags gaps in real-time, and
 								guides your team to close them before submission.
@@ -206,7 +206,7 @@ export default function FeaturesContent() {
 									"Standards auto-update when ISSB releases new guidance",
 									"Cross-referenced with GRI, TCFD, SASB for multi-framework reporting",
 								].map((item) => (
-									<li key={item} className="flex items-start gap-3 text-base">
+									<li key={item} className="flex items-start gap-3 text-body">
 										<span className="h-6 w-6 mt-0.5 shrink-0 rounded-full bg-primary flex items-center justify-center">
 											<svg
 												className="h-3.5 w-3.5 text-white"
@@ -227,7 +227,7 @@ export default function FeaturesContent() {
 						</div>
 						<div>
 							<div
-								className="animate-float relative -mx-6 lg:mx-0"
+								className="animate-float relative"
 								style={{
 									maskImage:
 										"linear-gradient(to bottom, black 55%, transparent 100%)",
@@ -238,7 +238,7 @@ export default function FeaturesContent() {
 								<img
 									src={dashboardMockup.src}
 									alt="ESG Assessment Report"
-									className="max-w-none w-[140vw] -ml-[30vw] lg:w-full lg:ml-0 lg:scale-[1.4] origin-center"
+									className="max-w-full w-full lg:w-full"
 								/>
 							</div>
 						</div>
@@ -247,12 +247,12 @@ export default function FeaturesContent() {
 			</section>
 
 			{/* Automated GHG Calculations */}
-			<section className="py-20 md:py-28 bg-muted/30 overflow-hidden">
+			<section className="py-section-y bg-muted/30 overflow-hidden">
 				<div className="container overflow-visible">
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center overflow-visible">
+					<div className="grid grid-cols-1 lg:grid-cols-[7fr_5fr] gap-16 items-center overflow-visible">
 						<div className="order-2 lg:order-1 overflow-visible">
 							<div
-								className="animate-float relative -mx-6 lg:mx-0"
+								className="animate-float relative"
 								style={{
 									maskImage:
 										"linear-gradient(to bottom, black 55%, transparent 100%)",
@@ -263,17 +263,17 @@ export default function FeaturesContent() {
 								<img
 									src={ghgCalcSvg.src}
 									alt="GHG Emissions Dashboard"
-									className="max-w-none w-[140vw] -ml-[12vw] lg:w-full lg:ml-0 lg:scale-[1.6] origin-center"
+									className="max-w-full w-full lg:w-full"
 								/>
 							</div>
 						</div>
 						<div className="order-1 lg:order-2">
 							<SectionLabel>AUTOMATED GHG CALCULATIONS</SectionLabel>
-							<h2 className="text-2xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
+							<h2 className="heading-h2 mt-3 mb-6">
 								Input Data.{" "}
 								<span className="accent-italic">Get Certified Figures.</span>
 							</h2>
-							<p className="text-foreground mb-8 text-lg leading-relaxed">
+							<p className="text-body-lg text-foreground mb-8">
 								No more Excel emission factor lookups. ESG Horizon maintains the
 								latest IPCC AR6 and GHG Protocol conversion factors — updated
 								automatically as standards evolve.
@@ -285,7 +285,7 @@ export default function FeaturesContent() {
 									"Scope 3 category templates for 15 categories",
 									"Intensity metrics auto-calculated (per revenue, per employee)",
 								].map((item) => (
-									<li key={item} className="flex items-start gap-3 text-base">
+									<li key={item} className="flex items-start gap-3 text-body">
 										<span className="h-6 w-6 mt-0.5 shrink-0 rounded-full bg-primary flex items-center justify-center">
 											<svg
 												className="h-3.5 w-3.5 text-white"
@@ -309,26 +309,26 @@ export default function FeaturesContent() {
 			</section>
 
 			{/* CTA */}
-			<section className="relative bg-primary py-20 md:py-24 overflow-hidden">
+			<section className="relative bg-primary py-section-y overflow-hidden">
 				<img
 					src={bubbleRings.src}
 					alt=""
 					className="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-60 select-none animate-cta-drift"
 				/>
 				<div className="container relative text-center text-white">
-					<h2 className="text-3xl md:text-4xl font-bold mb-4">
+					<h2 className="heading-h2 mb-4">
 						Start Building a Confident
 						<br />
 						ESG Reporting Process
 					</h2>
-					<p className="text-white mb-8 max-w-lg mx-auto">
+					<p className="text-body-lg text-white mb-8 max-w-lg mx-auto">
 						See how ESG Horizon fits your organisation in a personalised
 						30-minute walkthrough.
 					</p>
 					<Button
 						size="lg"
 						asChild
-						className="bg-white text-primary hover:bg-white/90 rounded-lg px-5 py-4 md:px-8 md:py-6 text-sm md:text-base font-semibold"
+						className="bg-white text-primary hover:bg-white/90 rounded-lg font-semibold"
 					>
 						<Link href="/contact">Request Your Personalised Demo</Link>
 					</Button>

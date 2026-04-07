@@ -3,13 +3,13 @@ import logo from "@/assets/logo-full.png";
 
 const Footer = () => (
   <footer className="bg-[#1a1a1a] text-white overflow-hidden">
-    <div className="px-6 md:px-10 lg:px-16 xl:px-24 py-10 md:py-16">
+    <div className="container py-section-y-sm">
       {/* Mobile + Tablet: stacked. Desktop (lg+): single row */}
       <div className="lg:flex lg:justify-between lg:items-start lg:gap-16">
         {/* Logo + description */}
         <div className="mb-8 lg:mb-0 lg:max-w-sm">
           <img src={logo.src} alt="ESG Horizon" className="h-16 md:h-24 w-auto mb-4" />
-          <p className="text-sm text-white/80 leading-relaxed">
+          <p className="text-body-sm text-white/80">
             The one-stop platform for ESG reporting in Nigeria and across Africa. Automated, compliant, and audit-ready.
           </p>
           {/* Social links — commented out until accounts are ready
@@ -39,16 +39,16 @@ const Footer = () => (
         {/* Link columns — side-by-side, pushed right on lg+ */}
         <div className="flex justify-between lg:gap-24">
           <div>
-            <h2 className="font-body font-extrabold text-xs tracking-[0.15em] uppercase text-white/70 mb-4">PRODUCT</h2>
-            <ul className="space-y-3 text-sm text-white/85">
+            <h2 className="font-body font-extrabold text-eyebrow uppercase text-white/70 mb-4">PRODUCT</h2>
+            <ul className="space-y-3 text-body-sm text-white/85">
               <li><Link href="/features" className="hover:text-white transition-colors">Features</Link></li>
               <li><Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
               <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
             </ul>
           </div>
           <div>
-            <h2 className="font-body font-extrabold text-xs tracking-[0.15em] uppercase text-white/70 mb-4">COMPANY</h2>
-            <ul className="space-y-3 text-sm text-white/85">
+            <h2 className="font-body font-extrabold text-eyebrow uppercase text-white/70 mb-4">COMPANY</h2>
+            <ul className="space-y-3 text-body-sm text-white/85">
               <li><Link href="/#who-we-are" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               <li><Link href="/contact?type=support" className="hover:text-white transition-colors">Support</Link></li>
@@ -57,7 +57,7 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-white/10 mt-10 md:mt-14 pt-6 flex flex-col md:flex-row items-center justify-between text-xs md:text-sm text-white/70 gap-3 md:gap-0">
+      <div className="border-t border-white/10 mt-10 md:mt-14 pt-6 flex flex-col md:flex-row items-center justify-between text-body-sm text-white/70 gap-3 md:gap-0">
         <span>&copy; {new Date().getFullYear()} ESG Horizon. All rights reserved.</span>
         <div className="flex gap-6">
           <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>

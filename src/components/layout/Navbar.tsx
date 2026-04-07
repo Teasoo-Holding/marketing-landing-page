@@ -47,7 +47,7 @@ const Navbar = () => {
 		<header className="hidden lg:block sticky top-0 z-50 bg-white backdrop-blur border-b border-gray-100">
 			<nav
 				aria-label="Main navigation"
-				className="mx-auto flex items-center justify-between h-20 px-10 lg:px-16"
+				className="container flex items-center justify-between h-20"
 			>
 				<Link href="/" className="flex items-center gap-2">
 					<img src={logo.src} alt="ESG Horizon" className="h-24 w-auto" />
