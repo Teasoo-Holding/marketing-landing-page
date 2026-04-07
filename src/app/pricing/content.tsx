@@ -94,16 +94,16 @@ export default function PricingContent() {
 	return (
 		<>
 			{/* Hero */}
-			<section className="relative overflow-hidden bg-gradient-to-b from-[#f7fdfb] via-[#f0faf7] to-[#e8f6f2] py-20 md:py-28">
+			<section className="relative overflow-hidden bg-gradient-to-b from-[#f7fdfb] via-[#f0faf7] to-[#e8f6f2] py-section-y">
 				<div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-[#e8f6f2]/60" />
 				<div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 					<div>
 						<SectionLabel>PRICING</SectionLabel>
-						<h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg text-foreground">
+						<h1 className="heading-h1 mt-3 max-w-lg text-foreground">
 							Pricing Built Around{" "}
 							<span className="accent-italic">Your Organisation</span>
 						</h1>
-						<p className="text-foreground mt-4 max-w-xl text-lg">
+						<p className="text-body-lg text-foreground mt-4 max-w-xl">
 							We don&apos;t believe in one-size-fits-all plans. Your
 							organisation is unique — your pricing should reflect that.
 						</p>
@@ -119,24 +119,24 @@ export default function PricingContent() {
 			</section>
 
 			{/* Conversation-based pricing */}
-			<section className="py-20 md:py-28 bg-muted/50">
+			<section className="py-section-y bg-muted/50">
 				<div className="container">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 						<div>
 							<SectionLabel>OUR APPROACH</SectionLabel>
-							<h2 className="text-2xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
+							<h2 className="heading-h2 mt-3 mb-6">
 								Pricing by{" "}
 								<span className="accent-italic">
 									Conversation, Not Catalogue
 								</span>
 							</h2>
-							<p className="text-foreground mb-6 text-base leading-relaxed">
+							<p className="text-body text-foreground mb-6">
 								ESG reporting complexity varies enormously — a multinational
 								energy company has very different needs from a mid-size
 								manufacturer or a public-sector agency. That&apos;s why we price
 								by conversation, not catalogue.
 							</p>
-							<p className="text-foreground mb-8 text-base leading-relaxed">
+							<p className="text-body text-foreground mb-8">
 								After a personalised demo, we&apos;ll map out exactly which
 								modules and capabilities your team needs — and build a plan that
 								reflects your actual usage, not a bundle of features you&apos;ll
@@ -165,7 +165,7 @@ export default function PricingContent() {
 								].map((item) => (
 									<div
 										key={item.title}
-										className="flex gap-4 items-start rounded-xl border border-border p-5"
+										className="flex gap-4 items-start rounded-xl border border-border p-card-p-sm"
 									>
 										<div
 											className={`flex-shrink-0 w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center`}
@@ -173,8 +173,8 @@ export default function PricingContent() {
 											<img src={item.iconSrc.src} alt="" className="h-6 w-6" />
 										</div>
 										<div>
-											<p className="font-bold text-base mb-1">{item.title}</p>
-											<p className="text-sm text-foreground leading-relaxed">
+											<p className="font-bold text-body mb-1">{item.title}</p>
+											<p className="text-body-sm text-foreground">
 												{item.desc}
 											</p>
 										</div>
@@ -183,7 +183,7 @@ export default function PricingContent() {
 							</div>
 						</div>
 
-						<div className="relative bg-primary rounded-2xl p-6 md:p-10 text-primary-foreground overflow-hidden mt-8 md:mt-12">
+						<div className="relative bg-primary rounded-2xl p-card-p text-primary-foreground overflow-hidden mt-8 md:mt-12">
 							{/* Overlay for depth */}
 							<div className="absolute inset-0 bg-gradient-to-br from-black/5 via-transparent to-black/10 pointer-events-none" />
 							{/* Ellipse decorations */}
@@ -199,15 +199,15 @@ export default function PricingContent() {
 							/>
 
 							<div className="relative">
-								<h3 className="font-bold text-2xl md:text-3xl mb-4">
+								<h3 className="heading-h3 mb-4">
 									Get a Personalised Plan
 								</h3>
-								<p className="text-white mb-4 text-base leading-relaxed">
+								<p className="text-body text-white mb-4">
 									Tell us about your organisation in a 30-minute demo.
 									We&apos;ll show you exactly what ESG Horizon can do — then
 									tailor a proposal just for you.
 								</p>
-								<p className="text-white mb-8 text-sm">
+								<p className="text-body-sm text-white mb-8">
 									All proposals quoted in USD. Local currency invoicing
 									available on request.
 								</p>
@@ -221,7 +221,7 @@ export default function PricingContent() {
 									].map((item) => (
 										<li
 											key={item}
-											className="flex items-center gap-3 text-base"
+											className="flex items-center gap-3 text-body"
 										>
 											<span className="h-6 w-6 shrink-0 rounded-full bg-white/20 flex items-center justify-center">
 												<svg
@@ -261,15 +261,15 @@ export default function PricingContent() {
 			</section>
 
 			{/* Essentials */}
-			<section className="py-20 md:py-28 bg-white">
+			<section className="py-section-y bg-white">
 				<div className="container">
 					<div className="text-center mb-16">
 						<SectionLabel>WHAT&apos;S ALWAYS INCLUDED</SectionLabel>
-						<h2 className="text-3xl md:text-4xl font-bold mt-3">
+						<h2 className="heading-h2 mt-3">
 							Every Plan Comes With{" "}
 							<span className="accent-italic">These Essentials</span>
 						</h2>
-						<p className="text-foreground mt-3 max-w-2xl mx-auto">
+						<p className="text-body text-foreground mt-3 max-w-2xl mx-auto">
 							Regardless of the modules you select, these core capabilities are
 							included in every ESG Horizon plan.
 						</p>
@@ -278,7 +278,7 @@ export default function PricingContent() {
 						{essentials.map((e) => (
 							<div
 								key={e.title}
-								className="rounded-2xl border border-border bg-muted/50 p-5 md:p-7"
+								className="rounded-2xl border border-border bg-muted/50 p-card-p"
 							>
 								<div className="mb-5">
 									<img
@@ -287,8 +287,8 @@ export default function PricingContent() {
 										className="h-10 w-10"
 									/>
 								</div>
-								<h3 className="font-bold text-xl mb-3">{e.title}</h3>
-								<p className="text-sm text-foreground leading-relaxed">
+								<h3 className="heading-h3 mb-3">{e.title}</h3>
+								<p className="text-body-sm text-foreground">
 									{e.desc}
 								</p>
 							</div>
@@ -298,7 +298,7 @@ export default function PricingContent() {
 			</section>
 
 			{/* Deploy Steps */}
-			<section className="relative py-20 md:py-24 overflow-hidden bg-[#1a1a1a] text-white">
+			<section className="relative py-section-y overflow-hidden bg-[#1a1a1a] text-white">
 				{/* Atmosphere waves background */}
 				<img
 					src={atmosphereWaves.src}
@@ -314,8 +314,8 @@ export default function PricingContent() {
 
 				<div className="container relative">
 					<div className="text-center mb-16">
-						<span className="text-xs font-extrabold tracking-[0.2em] uppercase text-teal-400">HOW WE WORK TOGETHER</span>
-						<h2 className="text-2xl md:text-5xl font-bold mt-3">
+						<span className="section-label section-label-dark">HOW WE WORK TOGETHER</span>
+						<h2 className="heading-h2 mt-3">
 							From Demo to{" "}
 							<span className="accent-italic">Deployed in 4 Steps</span>
 						</h2>
@@ -332,8 +332,8 @@ export default function PricingContent() {
 									<div className="h-16 w-16 rounded-full bg-primary mx-auto flex items-center justify-center text-primary-foreground font-bold text-2xl mb-5 relative z-10">
 										{step.num}
 									</div>
-									<p className="font-semibold text-lg mb-1">{step.title}</p>
-									<p className="text-sm text-hero-dark-foreground/70">
+									<p className="font-semibold text-body-lg mb-1">{step.title}</p>
+									<p className="text-body-sm text-hero-dark-foreground/70">
 										{step.desc}
 									</p>
 								</div>
@@ -344,11 +344,11 @@ export default function PricingContent() {
 			</section>
 
 			{/* Stats */}
-			<section className="py-20 md:py-28">
+			<section className="py-section-y">
 				<div className="container">
 					<div className="text-center mb-16">
 						<SectionLabel>THE NUMBERS</SectionLabel>
-						<h2 className="text-2xl md:text-5xl font-bold mt-3">
+						<h2 className="heading-h2 mt-3">
 							Results Our Clients{" "}
 							<span className="accent-italic">Actually See</span>
 						</h2>
@@ -357,13 +357,13 @@ export default function PricingContent() {
 						{stats.map((stat) => (
 							<div
 								key={stat.label}
-								className="text-center border border-border rounded-2xl p-6 md:p-10"
+								className="text-center border border-border rounded-2xl p-card-p"
 							>
-								<p className="text-4xl md:text-6xl font-bold text-primary mb-3 font-heading italic">
+								<p className="text-display font-bold text-primary mb-3 font-heading italic">
 									{stat.value}
 								</p>
-								<p className="font-bold text-lg mb-2">{stat.label}</p>
-								<p className="text-sm text-foreground leading-relaxed">
+								<p className="font-bold text-body-lg mb-2">{stat.label}</p>
+								<p className="text-body-sm text-foreground">
 									{stat.desc}
 								</p>
 							</div>

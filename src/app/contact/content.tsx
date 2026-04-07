@@ -153,7 +153,7 @@ export default function ContactContent() {
 	return (
 		<>
 			{/* Hero */}
-			<section className="relative overflow-hidden bg-[#1a1a1a] text-white py-20 md:py-28">
+			<section className="relative overflow-hidden bg-[#1a1a1a] text-white py-section-y">
 				<img
 					src={targetRings.src}
 					alt=""
@@ -162,11 +162,11 @@ export default function ContactContent() {
 				<div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 					<div>
 						<SectionLabel dark>GET IN TOUCH</SectionLabel>
-						<h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg leading-tight">
+						<h1 className="heading-h1 mt-3 max-w-lg">
 							Ready to Transform Your{" "}
 							<span className="accent-italic">ESG Journey?</span>
 						</h1>
-						<p className="text-white mt-4 max-w-xl text-lg leading-relaxed">
+						<p className="text-body-lg text-white mt-4 max-w-xl">
 							Book a personalised walkthrough and discover exactly how ESG
 							Horizon fits your organisation. No generic demos — a focused
 							conversation about your specific challenges.
@@ -176,14 +176,14 @@ export default function ContactContent() {
 			</section>
 
 			{/* Form + Expectations */}
-			<section className="py-20 md:py-28">
+			<section className="py-section-y">
 				<div className="container">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 						<div>
-							<h2 className="font-body font-bold text-3xl md:text-4xl mb-4 tracking-tight">
+							<h2 className="heading-h2 mb-4">
 								What to Expect
 							</h2>
-							<p className="text-foreground mb-8">
+							<p className="text-body text-foreground mb-8">
 								We won&apos;t put you in a queue or give you a generic product
 								tour. Here&apos;s exactly what happens when you submit this
 								form:
@@ -195,8 +195,8 @@ export default function ContactContent() {
 											<img src={item.iconSrc.src} alt="" className="h-8 w-8" />
 										</div>
 										<div>
-											<h3 className="font-bold text-base mb-1">{item.title}</h3>
-											<p className="text-sm text-foreground leading-relaxed">
+											<h3 className="font-bold text-body mb-1">{item.title}</h3>
+											<p className="text-body-sm text-foreground">
 												{item.desc}
 											</p>
 										</div>
@@ -205,7 +205,7 @@ export default function ContactContent() {
 							</div>
 						</div>
 
-						<div className="border border-border rounded-xl p-5 md:p-8">
+						<div className="border border-border rounded-xl p-card-p">
 							{submitted ? (
 								<div className="text-center py-12">
 									<div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -221,13 +221,13 @@ export default function ContactContent() {
 											<polyline points="20 6 9 17 4 12" />
 										</svg>
 									</div>
-									<h3 className="font-body font-bold text-2xl md:text-3xl mb-3 tracking-tight">
+									<h3 className="heading-h3 mb-3">
 										Thank You!
 									</h3>
-									<p className="text-foreground mb-2">
+									<p className="text-body text-foreground mb-2">
 										Your request has been submitted successfully.
 									</p>
-									<p className="text-sm text-foreground mb-8">
+									<p className="text-body-sm text-foreground mb-8">
 										We&apos;ll be in touch within one business day with a
 										personalised response.
 									</p>
@@ -241,10 +241,10 @@ export default function ContactContent() {
 								</div>
 							) : (
 								<>
-									<h3 className="font-body font-bold text-2xl md:text-3xl mb-2 tracking-tight">
+									<h3 className="heading-h3 mb-2">
 										Get in Touch
 									</h3>
-									<p className="text-sm text-muted-foreground mb-6">
+									<p className="text-body-sm text-muted-foreground mb-6">
 										We&apos;ll be in touch within one business day.
 									</p>
 									<form
@@ -462,32 +462,32 @@ export default function ContactContent() {
 			</section>
 
 			{/* Built for Africa */}
-			<section className="relative overflow-hidden bg-primary text-white py-20 md:py-24">
+			<section className="relative overflow-hidden bg-primary text-white py-section-y">
 				<div className="container relative">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 						<div>
-							<span className="text-xs font-extrabold tracking-[0.2em] uppercase text-white/70">
+							<span className="section-label text-white/70">
 								OUR PRESENCE
 							</span>
-							<h2 className="font-body text-2xl md:text-4xl font-bold mt-3 mb-6 leading-tight">
+							<h2 className="heading-h2 mt-3 mb-6">
 								Built for Africa,
 								<br />
 								<span className="font-heading italic text-white/90">
 									Connected to the World
 								</span>
 							</h2>
-							<p className="text-white mb-4 text-sm leading-relaxed">
+							<p className="text-body text-white mb-4">
 								An African-centred ESG platform with global connectivity,
 								developed by ESG and data experts in partnership with
 								governments, regulators, and academia across the continent.
 							</p>
-							<p className="text-white mb-4 text-sm leading-relaxed">
+							<p className="text-body text-white mb-4">
 								Our mission is to drive sustainable development across Africa by
 								providing organisations, investors, and regulators with the
 								insights and tools needed to foster responsible and transparent
 								ESG practices.
 							</p>
-							<p className="text-white text-sm leading-relaxed">
+							<p className="text-body text-white">
 								We bridge the gap between local and global ESG standards —
 								empowering Africa&apos;s place in the global sustainability
 								conversation.
@@ -505,14 +505,14 @@ export default function ContactContent() {
 							].map((item, i) => (
 								<div
 									key={i}
-									className="bg-white/[0.08] border border-white/20 rounded-2xl p-5 md:p-8 text-center flex flex-col items-center justify-center gap-3"
+									className="bg-white/[0.08] border border-white/20 rounded-2xl p-card-p text-center flex flex-col items-center justify-center gap-3"
 								>
 									<img
 										src={item.iconSrc.src}
 										alt=""
 										className="h-10 w-10 md:h-14 md:w-14"
 									/>
-									<p className="text-sm text-white">{item.title}</p>
+									<p className="text-body-sm text-white">{item.title}</p>
 								</div>
 							))}
 						</div>

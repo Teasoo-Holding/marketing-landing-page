@@ -143,7 +143,7 @@ export default function HowItWorksContent() {
 	return (
 		<>
 			{/* Hero */}
-			<section className="relative overflow-hidden bg-[#1a1a1a] text-white py-20 md:py-28">
+			<section className="relative overflow-hidden bg-[#1a1a1a] text-white py-section-y">
 				<img
 					src={windAirCurrent.src}
 					alt=""
@@ -151,11 +151,11 @@ export default function HowItWorksContent() {
 				/>
 				<div className="container relative">
 					<SectionLabel dark>HOW IT WORKS</SectionLabel>
-					<h1 className="text-3xl md:text-5xl font-bold mt-3 max-w-lg">
+					<h1 className="heading-h1 mt-3 max-w-lg">
 						From <span className="accent-italic">Setup to Insights</span> in
 						Minutes, Not Months
 					</h1>
-					<p className="text-white mt-4 max-w-xl">
+					<p className="text-body-lg text-white mt-4 max-w-xl">
 						ESG Horizon is designed so your team can be collecting real ESG data
 						within hours of signing up — no consultants, no training marathons.
 					</p>
@@ -163,11 +163,11 @@ export default function HowItWorksContent() {
 			</section>
 
 			{/* Steps */}
-			<section className="py-20 md:py-28 bg-muted/50">
+			<section className="py-section-y bg-muted/50">
 				<div className="container">
 					<div className="text-center mb-16">
 						<SectionLabel>THE PROCESS</SectionLabel>
-						<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-2 font-body tracking-tight">
+						<h2 className="heading-h2 mt-4 mb-2">
 							Get Started in{" "}
 							<span className="accent-italic">3 Simple Steps</span>
 						</h2>
@@ -187,22 +187,22 @@ export default function HowItWorksContent() {
 								</div>
 
 								{/* Step content card */}
-								<div className="flex-1 bg-white border border-border rounded-2xl p-5 md:p-8">
+								<div className="flex-1 bg-white border border-border rounded-2xl p-card-p">
 									<SectionLabel>{step.label}</SectionLabel>
-									<h3 className="font-body font-bold text-xl md:text-3xl mt-2 mb-1">
+									<h3 className="heading-h3 mt-2 mb-1">
 										{step.title}
 									</h3>
-									<p className="text-sm font-medium text-primary mb-3">
+									<p className="text-body-sm font-medium text-primary mb-3">
 										{step.benefit}
 									</p>
-									<p className="text-sm md:text-base text-foreground mb-6 md:mb-8 max-w-2xl leading-relaxed">
+									<p className="text-body text-foreground mb-6 md:mb-8 max-w-2xl">
 										{step.desc}
 									</p>
 									<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 										{step.items.map((item) => (
 											<div
 												key={item.title}
-												className="bg-muted/40 border border-border/60 rounded-xl p-5 flex gap-4 items-center"
+												className="bg-muted/40 border border-border/60 rounded-xl p-card-p-sm flex gap-4 items-center"
 											>
 												<Image
 													src={item.icon}
@@ -212,8 +212,8 @@ export default function HowItWorksContent() {
 													className="shrink-0 w-auto h-auto"
 												/>
 												<div>
-													<p className="font-semibold text-sm">{item.title}</p>
-													<p className="text-xs text-foreground mt-0.5">
+													<p className="font-semibold text-body-sm">{item.title}</p>
+													<p className="text-body-sm text-foreground mt-0.5">
 														{item.desc}
 													</p>
 												</div>
@@ -228,11 +228,11 @@ export default function HowItWorksContent() {
 			</section>
 
 			{/* FAQ */}
-			<section className="py-20 md:py-28">
+			<section className="py-section-y">
 				<div className="container max-w-3xl">
 					<div className="text-center mb-14">
 						<SectionLabel>COMMON QUESTIONS</SectionLabel>
-						<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 font-body tracking-tight">
+						<h2 className="heading-h2 mt-4">
 							Frequently Asked <span className="accent-italic">Questions</span>
 						</h2>
 					</div>
@@ -243,10 +243,10 @@ export default function HowItWorksContent() {
 								value={`faq-${i}`}
 								className="border border-border rounded-2xl px-5 md:px-8 py-1 bg-background shadow-sm"
 							>
-								<AccordionTrigger className="text-left font-semibold text-base hover:no-underline py-5">
+								<AccordionTrigger className="text-left font-semibold text-body hover:no-underline py-5">
 									{faq.q}
 								</AccordionTrigger>
-								<AccordionContent className="text-foreground text-sm leading-relaxed pb-5">
+								<AccordionContent className="text-foreground text-body-sm pb-5">
 									{faq.a}
 								</AccordionContent>
 							</AccordionItem>
