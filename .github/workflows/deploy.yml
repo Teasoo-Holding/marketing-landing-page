@@ -20,10 +20,10 @@ jobs:
         run: npm install --force
 
       - name: Build Marketing Site
-        run: yarn build 
+        run: yarn build
         env:
-          NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL }}
-          NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+          NEXT_PUBLIC_API_BASE_URL: ${{ github.ref == 'refs/heads/main' && secrets.NEXT_PUBLIC_API_BASE_URL || secrets.NEXT_PUBLIC_API_BASE_URL_STAGING }}
+          NEXT_PUBLIC_APP_URL: ${{ github.ref == 'refs/heads/main' && secrets.NEXT_PUBLIC_APP_URL || secrets.NEXT_PUBLIC_APP_URL_STAGING }}
           NODE_ENV: production
 
       - name: Set Target Directory
