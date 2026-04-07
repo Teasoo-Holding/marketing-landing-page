@@ -13,10 +13,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Enable Corepack
-        run: corepack enable
       - name: Install dependencies
-        run: yarn install --immutable
+        run: npm install --no-audit --no-fund
 
       - name: Set Environment Variables
         run: |
@@ -31,7 +29,7 @@ jobs:
           fi
 
       - name: Build Marketing Site
-        run: yarn build
+        run: npm run build
         env:
           NEXT_PUBLIC_API_BASE_URL: ${{ env.API_URL }}
           NEXT_PUBLIC_APP_URL: ${{ env.APP_URL }}
