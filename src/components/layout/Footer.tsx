@@ -60,8 +60,20 @@ const Footer = () => (
       <div className="border-t border-white/10 mt-10 md:mt-14 pt-6 flex flex-col md:flex-row items-center justify-between text-body-sm text-white/70 gap-3 md:gap-0">
         <span>&copy; {new Date().getFullYear()} ESG Horizon. All rights reserved.</span>
         <div className="flex gap-6">
-          <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+          <span
+            title="Coming soon"
+            aria-disabled="true"
+            className="text-white/40 cursor-not-allowed select-none"
+          >
+            Privacy Policy
+          </span>
+          <span
+            title="Coming soon"
+            aria-disabled="true"
+            className="text-white/40 cursor-not-allowed select-none"
+          >
+            Terms of Service
+          </span>
         </div>
       </div>
     </div>
