@@ -59,7 +59,7 @@ export default function ContactContent() {
 	const { toast } = useToast();
 	const searchParams = useSearchParams();
 	const [loading, setLoading] = useState(false);
-	const [sectors, setSectors] = useState<string[]>([]);
+	const [sectors, setSectors] = useState<{ id: string; name: string }[]>([]);
 
 	const typeParam = searchParams.get("type");
 	const initialType = REQUEST_TYPES.some((t) => t.value === typeParam)
@@ -70,7 +70,16 @@ export default function ContactContent() {
 	useEffect(() => {
 		fetch(`${API_BASE}/industries/sectors`)
 			.then((res) => (res.ok ? res.json() : []))
-			.then((data) => setSectors(data))
+			.then((data) => {
+				const list = Array.isArray(data) ? data : [];
+				const normalized = list
+					.map((s, i) => ({
+						id: String(s?.id ?? s?.name ?? i),
+						name: typeof s === "string" ? s : s?.name,
+					}))
+					.filter((s) => typeof s.name === "string" && s.name.length > 0);
+				setSectors(normalized);
+			})
 			.catch(() => setSectors([]));
 	}, []);
 
@@ -383,8 +392,8 @@ export default function ContactContent() {
 													</SelectTrigger>
 													<SelectContent>
 														{sectors.map((s) => (
-															<SelectItem key={s} value={s}>
-																{s}
+															<SelectItem key={s.name} value={s.name}>
+																{s.name}
 															</SelectItem>
 														))}
 														<SelectItem value="other">Other</SelectItem>
