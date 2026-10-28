@@ -19,7 +19,7 @@ const nextSteps = [
 
 export default function ThankYouPage() {
   return (
-    <PageShell focused>
+    <PageShell>
       <section className="py-section-y">
         <div className="container max-w-2xl text-center">
           <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
