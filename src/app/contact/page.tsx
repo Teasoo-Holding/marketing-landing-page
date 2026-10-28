@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <PageShell focused>
+    <PageShell>
       <Suspense>
         <ContactContent />
       </Suspense>
