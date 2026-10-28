@@ -2,7 +2,6 @@ import moleculeNetwork from "@/assets/ghg-molecule-network.svg";
 import heroSvg from "@/assets/hero.svg";
 import leafNature from "@/assets/leaf-nature.svg";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 
 const tags = [
@@ -10,13 +9,6 @@ const tags = [
 	"GHG Protocol Aligned",
 	"Audit-Ready",
 	"Enterprise Security",
-];
-
-const keyBenefits = [
-	"Assess your sustainability reporting readiness.",
-	"Identify potential data and disclosure gaps.",
-	"Understand priority areas for improvement.",
-	"Explore how ESG Horizon can support your reporting process.",
 ];
 
 const HeroSection = () => (
@@ -66,38 +58,7 @@ const HeroSection = () => (
 						<Button size="lg" asChild className="rounded-lg px-4 md:px-8">
 							<Link href="/contact/#book-demo">Book A Demo</Link>
 						</Button>
-						<Button
-							size="lg"
-							variant="outline"
-							asChild
-							className="rounded-lg border-primary text-primary px-4 md:px-8"
-						>
-							<Link href="/features">
-								Explore Features <ArrowRight className="ml-2 h-4 w-4" />
-							</Link>
-						</Button>
 					</div>
-
-					<p className="text-body text-foreground mb-6 max-w-[520px]">
-						See how ESG Horizon can help your organisation organise ESG data,
-						streamline reporting workflows, calculate emissions and prepare for
-						globally aligned sustainability disclosures.
-					</p>
-
-					<ul className="space-y-2 mb-8">
-						{keyBenefits.map((benefit) => (
-							<li
-								key={benefit}
-								className="flex gap-2.5 items-start text-body text-foreground"
-							>
-								<Check
-									className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary"
-									aria-hidden="true"
-								/>
-								{benefit}
-							</li>
-						))}
-					</ul>
 
 					<div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
 						{tags.map((tag) => (
