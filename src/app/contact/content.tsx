@@ -21,14 +21,11 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { useSearchParams } from "next/navigation";
+import { CONTACT_EMAIL } from "@/lib/constants";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const REQUEST_TYPES = [
-	{ value: "demo", label: "Book a Demo" },
-	{ value: "quote", label: "Request a Custom Quote" },
-	{ value: "support", label: "Support" },
-] as const;
+const REQUEST_TYPES = ["demo", "quote", "support"];
 
 const expectations = [
 	{
@@ -53,19 +50,42 @@ const expectations = [
 	},
 ];
 
+const keyBenefits = [
+	"Assess your sustainability reporting readiness.",
+	"Identify potential data and disclosure gaps.",
+	"Understand priority areas for improvement.",
+	"Explore how ESG Horizon can support your reporting process.",
+];
+
+const FORM_COPY: Record<string, { heading: string; subheading: string }> = {
+	demo: {
+		heading: "Book Your Demo",
+		subheading:
+			"Includes your IFRS S1 & S2 Gap Assessment. We’ll be in touch within one business day.",
+	},
+	quote: {
+		heading: "Request a Custom Quote",
+		subheading: "We’ll be in touch within one business day.",
+	},
+	support: {
+		heading: "Get Support",
+		subheading: "We’ll get back to you shortly.",
+	},
+};
+
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export default function ContactContent() {
 	const { toast } = useToast();
+	const router = useRouter();
 	const searchParams = useSearchParams();
 	const [loading, setLoading] = useState(false);
 	const [sectors, setSectors] = useState<{ id: string; name: string }[]>([]);
 
 	const typeParam = searchParams.get("type");
-	const initialType = REQUEST_TYPES.some((t) => t.value === typeParam)
-		? typeParam!
-		: "demo";
-	const [requestType, setRequestType] = useState(initialType);
+	// Campaign traffic books demos; quote and support stay reachable via ?type=
+	const requestType =
+		typeParam && REQUEST_TYPES.includes(typeParam) ? typeParam : "demo";
 
 	useEffect(() => {
 		fetch(`${API_BASE}/industries/sectors`)
@@ -130,8 +150,13 @@ export default function ContactContent() {
 				return;
 			}
 
+			// Demo bookings land on a dedicated page so conversions can be tracked
+			if (requestType === "demo") {
+				router.push("/contact/thank-you/");
+				return;
+			}
+
 			const successMessages: Record<string, string> = {
-				demo: "Demo requested! We\u2019ll be in touch within one business day.",
 				quote:
 					"Quote requested! We\u2019ll send a custom proposal within one business day.",
 				support:
@@ -144,7 +169,6 @@ export default function ContactContent() {
 			form.reset();
 			setIndustry("");
 			setOrgSize("");
-			setRequestType("demo");
 			setAttempted(false);
 			setTouched({});
 			setSubmitted(true);
@@ -170,16 +194,45 @@ export default function ContactContent() {
 				/>
 				<div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 					<div>
-						<SectionLabel dark>GET IN TOUCH</SectionLabel>
-						<h1 className="heading-h1 mt-3 max-w-lg">
-							Ready to Transform Your{" "}
-							<span className="accent-italic">ESG Journey?</span>
+						<SectionLabel dark>BOOK A DEMO</SectionLabel>
+						<h1 className="heading-h1 mt-3 max-w-xl">
+							Book a Demo. Get Your{" "}
+							<span className="accent-italic">IFRS S1 &amp; S2 Gap Assessment.</span>
 						</h1>
 						<p className="text-body-lg text-white mt-4 max-w-xl">
-							Book a personalised walkthrough and discover exactly how ESG
-							Horizon fits your organisation. No generic demos — a focused
-							conversation about your specific challenges.
+							Book a personalised demo and receive an IFRS S1 &amp; S2 Gap
+							Assessment to help identify potential reporting gaps, understand
+							your current readiness and prioritise your next steps.
 						</p>
+						<Button asChild size="lg" className="mt-6">
+							<a href="#book-demo">Book A Demo</a>
+						</Button>
+					</div>
+					<div className="bg-white/[0.06] border border-white/15 rounded-2xl p-card-p">
+						<p className="text-body text-white">
+							See how ESG Horizon can help your organisation organise ESG data,
+							streamline reporting workflows, calculate emissions and prepare
+							for globally aligned sustainability disclosures.
+						</p>
+						<ul className="mt-5 space-y-3">
+							{keyBenefits.map((benefit) => (
+								<li key={benefit} className="flex gap-3 items-start text-body text-white">
+									<svg
+										className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										strokeWidth="2.5"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										aria-hidden="true"
+									>
+										<polyline points="20 6 9 17 4 12" />
+									</svg>
+									{benefit}
+								</li>
+							))}
+						</ul>
 					</div>
 				</div>
 			</section>
@@ -214,7 +267,10 @@ export default function ContactContent() {
 							</div>
 						</div>
 
-						<div className="border border-border rounded-xl p-card-p">
+						<div
+							id="book-demo"
+							className="border border-border rounded-xl p-card-p scroll-mt-24"
+						>
 							{submitted ? (
 								<div className="text-center py-12">
 									<div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -251,42 +307,16 @@ export default function ContactContent() {
 							) : (
 								<>
 									<h3 className="heading-h3 mb-2">
-										Get in Touch
+										{FORM_COPY[requestType].heading}
 									</h3>
 									<p className="text-body-sm text-muted-foreground mb-6">
-										We&apos;ll be in touch within one business day.
+										{FORM_COPY[requestType].subheading}
 									</p>
 									<form
 										onSubmit={handleSubmit}
 										className="space-y-4"
 										noValidate
 									>
-										<div>
-											<label className="text-sm font-medium mb-2 block">
-												What can we help you with? *
-											</label>
-											<div
-												className="flex flex-wrap gap-2"
-												role="group"
-												aria-label="Request type"
-											>
-												{REQUEST_TYPES.map((t) => (
-													<button
-														key={t.value}
-														type="button"
-														onClick={() => setRequestType(t.value)}
-														aria-pressed={requestType === t.value}
-														className={`rounded-full px-4 py-2 text-sm font-medium border transition-colors ${
-															requestType === t.value
-																? "bg-primary text-white border-primary"
-																: "bg-background text-foreground border-border hover:border-primary/50"
-														}`}
-													>
-														{t.label}
-													</button>
-												))}
-											</div>
-										</div>
 										<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 											<div>
 												<label
@@ -456,11 +486,20 @@ export default function ContactContent() {
 													? "Request My Custom Quote \u2192"
 													: requestType === "support"
 														? "Submit Support Request \u2192"
-														: "Request My Personalised Demo \u2192"}
+														: "Book A Demo"}
 										</Button>
 										<p className="text-xs text-muted-foreground text-center">
 											Your data is safe with us. We never share your information
 											with third parties.
+										</p>
+										<p className="text-xs text-muted-foreground text-center">
+											Prefer email?{" "}
+											<a
+												href={`mailto:${CONTACT_EMAIL}`}
+												className="text-primary underline underline-offset-2"
+											>
+												{CONTACT_EMAIL}
+											</a>
 										</p>
 									</form>
 								</>

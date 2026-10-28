@@ -2,6 +2,7 @@
 
 import logo from "@/assets/logo-full.png";
 import { Button } from "@/components/ui/button";
+import { isFocusedPage } from "@/lib/constants";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -154,7 +155,7 @@ export const MobileNav = () => {
 		return () => document.removeEventListener("keydown", handleTab);
 	}, [mobileOpen]);
 
-	if (!mounted) return null;
+	if (!mounted || isFocusedPage(pathname)) return null;
 
 	return createPortal(
 		<>
