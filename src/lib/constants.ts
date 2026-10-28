@@ -1,1 +1,1 @@
-export const CONTACT_EMAIL = "support@esghorizon.africa";
+export const CONTACT_EMAIL = "digital@teasooconsulting.com";
