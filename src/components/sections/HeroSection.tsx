@@ -2,7 +2,7 @@ import moleculeNetwork from "@/assets/ghg-molecule-network.svg";
 import heroSvg from "@/assets/hero.svg";
 import leafNature from "@/assets/leaf-nature.svg";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 
 const tags = [
@@ -10,6 +10,13 @@ const tags = [
 	"GHG Protocol Aligned",
 	"Audit-Ready",
 	"Enterprise Security",
+];
+
+const keyBenefits = [
+	"Assess your sustainability reporting readiness.",
+	"Identify potential data and disclosure gaps.",
+	"Understand priority areas for improvement.",
+	"Explore how ESG Horizon can support your reporting process.",
 ];
 
 const HeroSection = () => (
@@ -37,30 +44,27 @@ const HeroSection = () => (
 			/>
 
 			<div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-				{/* Left — content (5 cols) */}
-				<div className="lg:col-span-5">
+				{/* Left — content (6 cols) */}
+				<div className="lg:col-span-6">
 					<span className="inline-flex items-center gap-2 text-xs md:text-body-sm whitespace-nowrap font-extrabold border border-primary/30 rounded-full px-2.5 py-1 md:px-4 md:py-1.5 mb-6 text-black bg-white">
 						<span className="h-2 w-2 rounded-full bg-primary" />
 						Nigeria&apos;s #1 IFRS-Ready ESG Platform
 					</span>
 
-					<h1 className="heading-display mb-6 text-foreground">
-						Cut ESG
-						<br />
-						Reporting Time
-						<br />
-						by <span className="accent-italic">Up to 60%</span>
+					<h1 className="heading-h1 mb-5 text-foreground">
+						Book a Demo. Get Your{" "}
+						<span className="accent-italic">IFRS S1 &amp; S2 Gap Assessment.</span>
 					</h1>
 
-					<p className="text-body-lg text-foreground mb-8 max-w-[480px]">
-						Automate disclosures, reduce compliance risk, and gain a single
-						source of truth for ESG data — built for African regulatory
-						realities.
+					<p className="text-body-lg text-foreground mb-6 max-w-[520px]">
+						Book a personalised demo and receive an IFRS S1 &amp; S2 Gap
+						Assessment to help identify potential reporting gaps, understand
+						your current readiness and prioritise your next steps.
 					</p>
 
 					<div className="flex gap-3 md:gap-4 mb-8">
 						<Button size="lg" asChild className="rounded-lg px-4 md:px-8">
-							<Link href="/contact">Request Your Demo</Link>
+							<Link href="/contact/#book-demo">Book A Demo</Link>
 						</Button>
 						<Button
 							size="lg"
@@ -73,6 +77,27 @@ const HeroSection = () => (
 							</Link>
 						</Button>
 					</div>
+
+					<p className="text-body text-foreground mb-6 max-w-[520px]">
+						See how ESG Horizon can help your organisation organise ESG data,
+						streamline reporting workflows, calculate emissions and prepare for
+						globally aligned sustainability disclosures.
+					</p>
+
+					<ul className="space-y-2 mb-8">
+						{keyBenefits.map((benefit) => (
+							<li
+								key={benefit}
+								className="flex gap-2.5 items-start text-body text-foreground"
+							>
+								<Check
+									className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary"
+									aria-hidden="true"
+								/>
+								{benefit}
+							</li>
+						))}
+					</ul>
 
 					<div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
 						{tags.map((tag) => (
@@ -87,8 +112,8 @@ const HeroSection = () => (
 					</div>
 				</div>
 
-				{/* Right — dashboard mockup (7 cols) */}
-				<div className="lg:col-span-7">
+				{/* Right — dashboard mockup (6 cols) */}
+				<div className="lg:col-span-6">
 					<img
 						src={heroSvg.src}
 						alt="ESG Horizon Dashboard — GHG emissions, scope breakdown, and reduction targets"
