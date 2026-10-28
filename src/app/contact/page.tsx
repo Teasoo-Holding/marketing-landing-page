@@ -4,15 +4,15 @@ import PageShell from "@/components/layout/PageShell";
 import ContactContent from "./content";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Book a Demo — IFRS S1 & S2 Gap Assessment",
   description:
-    "Book a personalised ESG Horizon demo. Get a tailored walkthrough, custom proposal within 24 hours, and guided onboarding — no generic product tours.",
+    "Book a personalised ESG Horizon demo and receive an IFRS S1 & S2 Gap Assessment to identify reporting gaps, understand your readiness and prioritise your next steps.",
   alternates: { canonical: "/contact/" },
 };
 
 export default function ContactPage() {
   return (
-    <PageShell>
+    <PageShell focused>
       <Suspense>
         <ContactContent />
       </Suspense>
