@@ -20,7 +20,7 @@ const HeroSection = () => (
 		<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(255,255,255,0.5)_100%)]" />
 
 		{/* Capped content box — owns layout + decorative anchors */}
-		<div className="relative mx-auto max-w-[1280px] px-6 lg:px-12 pt-24 pb-16 lg:pt-28 lg:pb-20">
+		<div className="container relative pt-24 pb-16 lg:pt-28 lg:pb-20">
 			{/* Decorative leaf — anchored to capped box, hangs off the left edge */}
 			<img
 				src={leafNature.src}

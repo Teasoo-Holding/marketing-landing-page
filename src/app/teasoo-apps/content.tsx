@@ -49,8 +49,50 @@ function AppCard({ app }: { app: TeasooApp }) {
 	);
 }
 
+function FeaturedApp({ app }: { app: TeasooApp }) {
+	return (
+		<article className="grid grid-cols-1 items-center gap-8 overflow-hidden rounded-2xl border border-border bg-white shadow-sm lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12">
+			{/* Product picture with the logo on top */}
+			<div className="relative h-full px-6 pb-10 pt-6 sm:px-8 sm:pt-8" style={{ backgroundColor: app.tint }}>
+				<img src={app.image} alt={app.imageAlt} className="w-full rounded-xl shadow-md" />
+				<div className="absolute -bottom-7 left-6 flex h-16 items-center rounded-xl border border-border bg-white px-4 shadow-sm sm:left-8 lg:bottom-6">
+					{app.logoStyle === "wide" ? (
+						<img src={app.logo} alt={`${app.name} logo`} className="h-14 w-auto" />
+					) : (
+						<img src={app.logo} alt={`${app.name} logo`} className="h-10 w-10 rounded-lg" />
+					)}
+				</div>
+			</div>
+			<div className="px-6 pb-8 pt-4 sm:px-8 lg:py-10 lg:pl-0 lg:pr-10">
+				<p className="section-label">Featured app</p>
+				<h3 className="heading-h2 mt-2">{app.name}</h3>
+				<p className="mt-1 font-semibold text-primary">{app.tagline}</p>
+				<p className="text-body mt-4 max-w-xl text-foreground">{app.description}</p>
+				<ul className="mt-5 space-y-2">
+					{app.highlights.map((h) => (
+						<li key={h} className="flex items-start gap-2 text-body-sm text-foreground">
+							<Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
+							{h}
+						</li>
+					))}
+				</ul>
+				<a
+					href={app.url}
+					target="_blank"
+					rel="noopener"
+					className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
+				>
+					Visit App <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+					<span className="sr-only">: {app.name} (opens in a new tab)</span>
+				</a>
+			</div>
+		</article>
+	);
+}
+
 export default function TeasooAppsContent() {
-	// Featured apps first, then the rest in list order.
+	const featured = TEASOO_APPS.find((a) => a.featured);
+	// Every app, the featured one included, is listed below the featured block.
 	const apps = [...TEASOO_APPS].sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
 
 	return (
@@ -72,7 +114,10 @@ export default function TeasooAppsContent() {
 			{/* Apps */}
 			<section className="py-section-y" aria-labelledby="apps-heading">
 				<div className="container">
-					<h2 id="apps-heading" className="sr-only">Our apps</h2>
+					{featured && <FeaturedApp app={featured} />}
+					<h2 id="apps-heading" className={featured ? "heading-h3 mb-6 mt-16" : "sr-only"}>
+						All apps
+					</h2>
 					<ul className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 						{apps.map((app) => (
 							<li key={app.name}>
