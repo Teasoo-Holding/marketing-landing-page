@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://esghorizon.africa/teasoo-apps/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://esghorizon.africa/contact/</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>

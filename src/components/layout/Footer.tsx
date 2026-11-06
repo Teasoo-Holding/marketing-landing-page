@@ -50,6 +50,7 @@ const Footer = () => (
             <h2 className="font-body font-extrabold text-eyebrow uppercase text-white/70 mb-4">COMPANY</h2>
             <ul className="space-y-3 text-body-sm text-white/85">
               <li><Link href="/#who-we-are" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/teasoo-apps" className="hover:text-white transition-colors">Teasoo Apps</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               <li><Link href="/contact?type=support" className="hover:text-white transition-colors">Support</Link></li>
             </ul>

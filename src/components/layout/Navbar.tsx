@@ -16,6 +16,7 @@ const navLinks = [
 	{ label: "Features", path: "/features" },
 	{ label: "How It Works", path: "/how-it-works" },
 	{ label: "Pricing", path: "/pricing" },
+	{ label: "Teasoo Apps", path: "/teasoo-apps" },
 	{ label: "Contact", path: "/contact" },
 ];
 
@@ -53,7 +54,7 @@ const Navbar = () => {
 					<img src={logo.src} alt="ESG Horizon" className="h-24 w-auto" />
 				</Link>
 
-				<div className="flex items-center gap-10">
+				<div className="flex items-center gap-6 xl:gap-10">
 					{navLinks.map((link) => {
 						const isActive =
 							link.path === "/"
