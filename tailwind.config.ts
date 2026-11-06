@@ -7,11 +7,10 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: {
-        DEFAULT: "1rem",
-        sm: "1.5rem",
-        md: "2rem",
-      },
+      // Side padding per breakpoint lives in src/styles/index.css (.container).
+      // Tailwind only applies padding keys that match the container's own
+      // screens, and only 2xl is set here, so sm/md/lg keys were ignored.
+      padding: "1.25rem",
       screens: {
         "2xl": "1400px",
       },
