@@ -1,0 +1,93 @@
+<svg width="1150" height="805" viewBox="0 0 1150 805" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="Inter, 'Segoe UI', Arial, sans-serif">
+  <title>Teasoo TMS tree registry map and field app (illustration)</title>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#dbe7df" stroke-width="1"/>
+    </pattern>
+    <clipPath id="mapClip"><rect x="40" y="112" width="760" height="652" rx="16"/></clipPath>
+  </defs>
+  <rect width="1150" height="805" rx="36" fill="#ffffff"/>
+
+  <!-- Header -->
+  <path d="M60 46 50 60h6l-5 7h7v5h4v-5h7l-5-7h6z" fill="#1d6b45" transform="translate(0 -2) scale(1)"/>
+  <text x="96" y="58" font-size="20" font-weight="700" fill="#1f2937">Reforestation registry</text>
+  <text x="96" y="80" font-size="14" fill="#6b7280">Mangrove restoration project · 14 planting areas</text>
+  <rect x="938" y="44" width="172" height="34" rx="17" fill="#e8f3ec"/>
+  <circle cx="960" cy="61" r="6" fill="#1d6b45"/>
+  <text x="974" y="66" font-size="14" font-weight="600" fill="#1d6b45">Synced 2 min ago</text>
+
+  <!-- Map -->
+  <g clip-path="url(#mapClip)">
+    <rect x="40" y="112" width="760" height="652" fill="#f1f7f3"/>
+    <rect x="40" y="112" width="760" height="652" fill="url(#grid)"/>
+    <!-- river -->
+    <path d="M40 520 C180 470 260 600 400 560 S620 420 800 470" stroke="#bfdbfe" stroke-width="34" fill="none"/>
+    <!-- planting areas -->
+    <path d="M110 170 L330 150 L370 300 L180 350 Z" fill="#1d6b45" fill-opacity="0.16" stroke="#1d6b45" stroke-width="3"/>
+    <path d="M420 160 L700 190 L690 360 L450 330 Z" fill="#1d6b45" fill-opacity="0.16" stroke="#1d6b45" stroke-width="3"/>
+    <path d="M140 600 L340 640 L320 740 L120 720 Z" fill="#d97706" fill-opacity="0.14" stroke="#d97706" stroke-width="3" stroke-dasharray="10 8"/>
+    <path d="M480 600 L740 570 L760 730 L500 740 Z" fill="#1d6b45" fill-opacity="0.16" stroke="#1d6b45" stroke-width="3"/>
+    <!-- trees -->
+    <g fill="#1d6b45">
+      <circle cx="170" cy="220" r="6"/><circle cx="210" cy="200" r="6"/><circle cx="250" cy="215" r="6"/><circle cx="295" cy="195" r="6"/>
+      <circle cx="190" cy="260" r="6"/><circle cx="235" cy="250" r="6"/><circle cx="280" cy="245" r="6"/><circle cx="320" cy="260" r="6"/>
+      <circle cx="215" cy="300" r="6"/><circle cx="260" cy="290" r="6"/><circle cx="305" cy="300" r="6"/>
+      <circle cx="470" cy="200" r="6"/><circle cx="520" cy="210" r="6"/><circle cx="570" cy="205" r="6"/><circle cx="620" cy="215" r="6"/><circle cx="665" cy="225" r="6"/>
+      <circle cx="480" cy="250" r="6"/><circle cx="530" cy="260" r="6"/><circle cx="580" cy="255" r="6"/><circle cx="630" cy="265" r="6"/>
+      <circle cx="495" cy="300" r="6"/><circle cx="545" cy="305" r="6"/><circle cx="600" cy="310" r="6"/><circle cx="650" cy="315" r="6"/>
+      <circle cx="530" cy="630" r="6"/><circle cx="580" cy="620" r="6"/><circle cx="630" cy="612" r="6"/><circle cx="680" cy="605" r="6"/>
+      <circle cx="540" cy="680" r="6"/><circle cx="590" cy="672" r="6"/><circle cx="640" cy="665" r="6"/><circle cx="700" cy="660" r="6"/>
+      <circle cx="555" cy="715" r="6"/><circle cx="610" cy="712" r="6"/><circle cx="665" cy="708" r="6"/>
+    </g>
+    <g fill="#dc2626"><circle cx="545" cy="210" r="6"/><circle cx="235" cy="300" r="6"/><circle cx="660" cy="690" r="6"/></g>
+    <!-- area labels -->
+    <g font-size="13" font-weight="700">
+      <rect x="120" y="318" width="118" height="26" rx="13" fill="#ffffff"/><text x="179" y="336" fill="#1d6b45" text-anchor="middle">Area A · 1,240</text>
+      <rect x="560" y="334" width="118" height="26" rx="13" fill="#ffffff"/><text x="619" y="352" fill="#1d6b45" text-anchor="middle">Area B · 2,105</text>
+      <rect x="158" y="652" width="146" height="26" rx="13" fill="#ffffff"/><text x="231" y="670" fill="#b45309" text-anchor="middle">Area C · planned</text>
+      <rect x="610" y="548" width="118" height="26" rx="13" fill="#ffffff"/><text x="669" y="566" fill="#1d6b45" text-anchor="middle">Area D · 1,880</text>
+    </g>
+    <!-- legend -->
+    <g transform="translate(64 380)">
+      <rect width="210" height="72" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+      <circle cx="22" cy="24" r="6" fill="#1d6b45"/><text x="36" y="29" font-size="13" fill="#374151">Healthy tree</text>
+      <circle cx="22" cy="50" r="6" fill="#dc2626"/><text x="36" y="55" font-size="13" fill="#374151">Needs replacement</text>
+    </g>
+  </g>
+  <rect x="40" y="112" width="760" height="652" rx="16" stroke="#e5e7eb"/>
+
+  <!-- KPI column -->
+  <g>
+    <rect x="820" y="112" width="290" height="110" rx="16" fill="#f8fafc" stroke="#e5e7eb"/>
+    <text x="844" y="146" font-size="14" fill="#6b7280">Trees recorded</text>
+    <text x="844" y="190" font-size="36" font-weight="700" fill="#1f2937">12,480</text>
+    <text x="1000" y="190" font-size="13" font-weight="600" fill="#16a34a">▲ 640 this week</text>
+  </g>
+  <g>
+    <rect x="820" y="236" width="290" height="110" rx="16" fill="#f8fafc" stroke="#e5e7eb"/>
+    <text x="844" y="270" font-size="14" fill="#6b7280">Survival rate</text>
+    <text x="844" y="314" font-size="36" font-weight="700" fill="#1f2937">91%</text>
+    <rect x="950" y="300" width="136" height="10" rx="5" fill="#e5e7eb"/><rect x="950" y="300" width="124" height="10" rx="5" fill="#1d6b45"/>
+  </g>
+
+  <!-- Phone: field app -->
+  <g transform="translate(860 362)">
+    <rect width="210" height="402" rx="30" fill="#111827"/>
+    <rect x="10" y="12" width="190" height="378" rx="22" fill="#ffffff"/>
+    <rect x="80" y="20" width="50" height="6" rx="3" fill="#d1d5db"/>
+    <text x="26" y="54" font-size="13" font-weight="700" fill="#1f2937">Record tree</text>
+    <rect x="118" y="40" width="68" height="22" rx="11" fill="#fef3c7"/>
+    <text x="152" y="55" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">OFFLINE</text>
+    <rect x="26" y="72" width="158" height="96" rx="12" fill="#e8f3ec"/>
+    <path d="M105 92 93 110h7l-6 9h9v7h5v-7h9l-6-9h7z" fill="#1d6b45"/>
+    <text x="105" y="152" font-size="10" fill="#1d6b45" text-anchor="middle">Photo captured</text>
+    <text x="26" y="192" font-size="10" fill="#6b7280">Tree ID</text>
+    <text x="26" y="208" font-size="12" font-weight="700" fill="#1f2937">MGR-B-02106</text>
+    <text x="26" y="232" font-size="10" fill="#6b7280">Species</text>
+    <text x="26" y="248" font-size="12" font-weight="600" fill="#1f2937">Red mangrove</text>
+    <text x="26" y="272" font-size="10" fill="#6b7280">Location</text>
+    <text x="26" y="288" font-size="12" font-weight="600" fill="#1f2937">4.7731° N, 6.9814° E</text>
+    <rect x="26" y="312" width="158" height="38" rx="10" fill="#1d6b45"/>
+    <text x="105" y="336" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Save · syncs later</text>
+  </g>
+</svg>
