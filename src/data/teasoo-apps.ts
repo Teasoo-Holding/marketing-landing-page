@@ -1,8 +1,10 @@
 import esgHorizonLogo from "@/assets/logo-full.png";
+import esgHorizonDashboard from "@/assets/hero.svg";
 
 /**
  * Digital products built or managed by Teasoo Consulting, shown on /teasoo-apps.
- * To add an app: add an entry here (and its logo under public/apps/). The page lays itself out.
+ * To add an app: add an entry here, with its logo and a product picture under public/apps/.
+ * The page lays itself out.
  */
 export interface TeasooApp {
   name: string;
@@ -12,8 +14,13 @@ export interface TeasooApp {
   url: string;
   /** Logo image path or imported asset URL */
   logo: string;
-  /** "wide" logos (wordmarks) are shown on a light panel; "icon" logos are square marks */
+  /** "wide" logos are wordmarks; "icon" logos are square marks */
   logoStyle: "wide" | "icon";
+  /** A picture of the product at work (dashboard, map, app screen) */
+  image: string;
+  imageAlt: string;
+  /** Background tint behind the product picture */
+  tint: string;
   highlights: string[];
   featured?: boolean;
 }
@@ -27,6 +34,9 @@ export const TEASOO_APPS: TeasooApp[] = [
     url: "https://esghorizon.africa",
     logo: esgHorizonLogo.src,
     logoStyle: "wide",
+    image: esgHorizonDashboard.src,
+    imageAlt: "ESG Horizon dashboard showing greenhouse gas emissions by scope and progress towards a 2030 reduction target",
+    tint: "#e8f6f2",
     highlights: ["IFRS S1 & S2 aligned", "GHG Scope 1, 2 & 3", "Audit-ready reports"],
     featured: true,
   },
@@ -38,6 +48,9 @@ export const TEASOO_APPS: TeasooApp[] = [
     url: "https://set.teasooconsulting.com",
     logo: "/apps/set.svg",
     logoStyle: "icon",
+    image: "/apps/set-preview.svg",
+    imageAlt: "Teasoo SET dashboard showing engagements logged, open commitments, stakeholder sentiment and recent engagements by risk level",
+    tint: "#eef2fd",
     highlights: ["Field engagement capture", "Risk and sentiment tracking", "GDPR and NDPA aligned"],
   },
   {
@@ -48,6 +61,9 @@ export const TEASOO_APPS: TeasooApp[] = [
     url: "https://tms.teasooconsulting.com",
     logo: "/apps/tms.svg",
     logoStyle: "icon",
+    image: "/apps/tms-preview.svg",
+    imageAlt: "Teasoo TMS map of planting areas with recorded trees, a survival rate of 91% and the field app recording a tree offline",
+    tint: "#e8f3ec",
     highlights: ["Works offline in the field", "Map-based tree registry", "Executive dashboard"],
   },
 ];
