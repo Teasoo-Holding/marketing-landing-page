@@ -30,3 +30,4 @@ bun.lockb
 
 # TypeScript
 next-env.d.ts
+*.tsbuildinfo
