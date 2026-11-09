@@ -40,7 +40,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "ESG Horizon" }],
   metadataBase: new URL("https://esghorizon.africa"),
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "ESG Horizon",
