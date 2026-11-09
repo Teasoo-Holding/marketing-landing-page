@@ -11,11 +11,13 @@ import { createPortal } from "react-dom";
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000";
 
-const navLinks = [
+const navLinks: { label: string; path: string; external?: boolean }[] = [
 	{ label: "Home", path: "/" },
 	{ label: "Features", path: "/features" },
 	{ label: "How It Works", path: "/how-it-works" },
 	{ label: "Pricing", path: "/pricing" },
+	// The blog is a separate app behind nginx, so it gets a full page load, not client routing.
+	{ label: "Blog", path: "/blog", external: true },
 	{ label: "Teasoo Apps", path: "/teasoo-apps" },
 	{ label: "Contact", path: "/contact" },
 ];
@@ -39,6 +41,11 @@ function useAuthStatus() {
 	return { isAuthenticated, userName };
 }
 
+/** A menu link: next/link for pages of this site, a plain anchor for other apps such as the blog. */
+function NavAnchor({ external, href, ...rest }: { external?: boolean; href: string; className?: string; onClick?: () => void; "aria-current"?: "page"; children: React.ReactNode }) {
+	return external ? <a href={href} {...rest} /> : <Link href={href} {...rest} />;
+}
+
 /** Desktop navbar — rendered before page content */
 const Navbar = () => {
 	const pathname = usePathname();
@@ -54,32 +61,33 @@ const Navbar = () => {
 					<img src={logo.src} alt="ESG Horizon" className="h-24 w-auto" />
 				</Link>
 
-				<div className="flex items-center gap-6 xl:gap-10">
+				<div className="flex items-center gap-4 xl:gap-8">
 					{navLinks.map((link) => {
 						const isActive =
 							link.path === "/"
 								? pathname === "/"
 								: pathname.startsWith(link.path);
 						return (
-							<Link
+							<NavAnchor
+								external={link.external}
 								key={link.path}
 								href={link.path}
 								aria-current={isActive ? "page" : undefined}
-								className={`text-[15px] font-medium transition-colors hover:text-primary ${
+								className={`whitespace-nowrap text-sm xl:text-[15px] font-medium transition-colors hover:text-primary ${
 									isActive
 										? "text-primary underline underline-offset-[6px] decoration-2"
 										: "text-foreground"
 								}`}
 							>
 								{link.label}
-							</Link>
+							</NavAnchor>
 						);
 					})}
 				</div>
 
 				<div className="flex items-center gap-3">
 					{isAuthenticated ? (
-						<Button asChild className="rounded-lg px-6 py-5 text-[15px]">
+						<Button asChild className="rounded-lg px-4 xl:px-6 py-5 text-sm xl:text-[15px]">
 							<Link href={`${APP_URL}/dashboard`}>Go to Dashboard</Link>
 						</Button>
 					) : (
@@ -87,11 +95,11 @@ const Navbar = () => {
 							<Button
 								variant="outline"
 								asChild
-								className="rounded-lg px-6 py-5 text-[15px] border-primary text-primary"
+								className="rounded-lg px-4 xl:px-6 py-5 text-sm xl:text-[15px] border-primary text-primary"
 							>
 								<Link href={`${APP_URL}/login`}>Sign In</Link>
 							</Button>
-							<Button asChild className="rounded-lg px-6 py-5 text-[15px]">
+							<Button asChild className="rounded-lg px-4 xl:px-6 py-5 text-sm xl:text-[15px]">
 								<Link href="/contact">Request Demo</Link>
 							</Button>
 						</>
@@ -218,7 +226,8 @@ export const MobileNav = () => {
 										? pathname === "/"
 										: pathname.startsWith(link.path);
 								return (
-									<Link
+									<NavAnchor
+										external={link.external}
 										key={link.path}
 										href={link.path}
 										onClick={() => setMobileOpen(false)}
@@ -228,7 +237,7 @@ export const MobileNav = () => {
 										}`}
 									>
 										{link.label}
-									</Link>
+									</NavAnchor>
 								);
 							})}
 						</nav>

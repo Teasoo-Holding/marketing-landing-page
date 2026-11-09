@@ -3,3 +3,4 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://esghorizon.africa/sitemap.xml
+Sitemap: https://esghorizon.africa/blog/sitemap.xml
