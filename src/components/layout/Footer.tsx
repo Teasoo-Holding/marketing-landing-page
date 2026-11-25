@@ -1,5 +1,6 @@
 import Link from "next/link";
 import logo from "@/assets/logo-full.png";
+import { SOLUTION_PAGES } from "@/data/solutions";
 
 const Footer = () => (
   <footer className="bg-[#1a1a1a] text-white overflow-hidden">
@@ -37,7 +38,15 @@ const Footer = () => (
         </div>
 
         {/* Link columns — side-by-side, pushed right on lg+ */}
-        <div className="flex justify-between lg:gap-24">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:flex lg:gap-20">
+          <div className="col-span-2 sm:col-span-1">
+            <h2 className="font-body font-extrabold text-eyebrow uppercase text-white/70 mb-4">SOLUTIONS</h2>
+            <ul className="space-y-3 text-body-sm text-white/85">
+              {SOLUTION_PAGES.map((page) => (
+                <li key={page.href}><Link href={page.href} className="hover:text-white transition-colors">{page.label}</Link></li>
+              ))}
+            </ul>
+          </div>
           <div>
             <h2 className="font-body font-extrabold text-eyebrow uppercase text-white/70 mb-4">PRODUCT</h2>
             <ul className="space-y-3 text-body-sm text-white/85">

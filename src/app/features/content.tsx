@@ -13,11 +13,13 @@ import iconUserGroups from "@/assets/User_Groups.svg";
 import SectionLabel from "@/components/sections/SectionLabel";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const features = [
 	{
 		iconSrc: iconSecurityConfig,
 		title: "IFRS Compliance Engine",
+		href: "/ifrs-s1-compliance/",
 		badge: "MOST VALUED",
 		desc: "Always-updated modules designed for IFRS S1 & S2. Conduct gap assessments, track progress, and generate globally aligned reports in days — not months.",
 		bullets: [
@@ -29,6 +31,7 @@ const features = [
 	{
 		iconSrc: iconAbacus,
 		title: "Automated GHG Calculations",
+		href: "/ghg-accounting-software/",
 		badge: "MOST VALUED",
 		desc: "Input activity data — fuel consumption, energy use, travel — and let ESG Horizon handle Scope 1, 2 & 3 conversions using latest GHG Protocol emission factors.",
 		bullets: [
@@ -40,6 +43,7 @@ const features = [
 	{
 		iconSrc: iconUserGroups,
 		title: "Collaborate Seamlessly",
+		href: "/esg-data-management/",
 		desc: "Invite team members from operations, HR, and finance to input data directly. Track progress in real-time across all entities.",
 		bullets: [
 			"Role-based access for each department",
@@ -50,6 +54,7 @@ const features = [
 	{
 		iconSrc: iconDatabase,
 		title: "Your System of Record",
+		href: "/esg-data-management/",
 		desc: "Enjoy a secure, version-controlled hub with full data history and granular access controls — your single source of truth for all ESG data.",
 		bullets: [
 			"Full version history on all data entries",
@@ -60,6 +65,7 @@ const features = [
 	{
 		iconSrc: iconDocument,
 		title: "Guided, Compliant Reporting",
+		href: "/esg-reporting-software/",
 		desc: "Step-by-step guided forms ensure you capture the right level of detail for audit-ready, comprehensive disclosures — no ESG expertise required.",
 		bullets: [
 			"Contextual help embedded throughout",
@@ -70,6 +76,7 @@ const features = [
 	{
 		iconSrc: iconComboChart,
 		title: "Visual Dashboards & Insights",
+		href: "/esg-reporting-software/",
 		desc: "See your ESG impact at a glance with intuitive dashboards, scope breakdowns, metric analysis, and peer benchmarking across your industry.",
 		bullets: [
 			"Executive-ready ESG performance dashboards",
@@ -80,6 +87,7 @@ const features = [
 	{
 		iconSrc: iconPresentation,
 		title: "Instant, Flexible Exports",
+		href: "/esg-reporting-software/",
 		desc: "Export polished, board-ready PDF reports with one click. Download raw Excel data for consultants or generate regulator submission packages.",
 		bullets: [
 			"Board-ready PDF reports with your branding",
@@ -90,6 +98,7 @@ const features = [
 	{
 		iconSrc: iconLock,
 		title: "Enterprise Security & Governance",
+		href: "/esg-data-management/",
 		desc: "Enterprise-grade hosting with encryption at rest and in transit, full audit on logs on every change for complete accountability.",
 		bullets: [
 			"AES-256 encryption at rest & in transit",
@@ -99,7 +108,7 @@ const features = [
 	},
 ];
 
-export default function FeaturesContent() {
+export default function FeaturesContent({ faq }: { faq?: React.ReactNode }) {
 	return (
 		<>
 			{/* Hero */}
@@ -110,13 +119,14 @@ export default function FeaturesContent() {
 				<div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 					<div>
 						<SectionLabel>PLATFORM FEATURES</SectionLabel>
-						<h1 className="heading-h1 mt-3 max-w-lg text-foreground">
-							Everything You Need to{" "}
-							<span className="accent-italic">Lead on ESG</span>
+						<h1 className="heading-h1 mt-3 max-w-xl text-foreground">
+							ESG Reporting Features Built for{" "}
+							<span className="accent-italic">Measurable ESG Performance</span>
 						</h1>
 						<p className="text-body-lg text-foreground mt-4 max-w-xl">
-							Powerful features designed for modern sustainability reporting
-							across Africa — from data collection to board-ready disclosure.
+							Manage ESG data, automate sustainability reporting, track greenhouse
+							gas emissions and prepare for global disclosure standards with ESG
+							Horizon. Built for organisations across Nigeria and Africa.
 						</p>
 					</div>
 					<div className="absolute right-[-60px] top-1/2 -translate-y-1/2 lg:relative lg:right-auto lg:top-auto lg:translate-y-0 flex justify-center pointer-events-none">
@@ -135,8 +145,8 @@ export default function FeaturesContent() {
 					<div className="text-center mb-16">
 						<SectionLabel>CORE CAPABILITIES</SectionLabel>
 						<h2 className="heading-h2 mt-3">
-							Built for{" "}
-							<span className="accent-italic">Measurable ESG Performance</span>
+							Every Capability Your{" "}
+							<span className="accent-italic">ESG Team Needs</span>
 						</h2>
 						<p className="text-body text-foreground mt-3 max-w-md mx-auto">
 							Every feature is designed to reduce effort, increase accuracy, and
@@ -178,6 +188,13 @@ export default function FeaturesContent() {
 										</li>
 									))}
 								</ul>
+								<Link
+									href={f.href}
+									className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+								>
+									Learn more <ArrowRight className="h-4 w-4" aria-hidden="true" />
+									<span className="sr-only">about {f.title}</span>
+								</Link>
 							</div>
 						))}
 					</div>
@@ -307,6 +324,8 @@ export default function FeaturesContent() {
 					</div>
 				</div>
 			</section>
+
+			{faq}
 
 			{/* CTA */}
 			<section className="relative bg-primary py-section-y overflow-hidden">

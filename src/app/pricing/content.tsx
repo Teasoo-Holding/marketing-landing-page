@@ -90,7 +90,7 @@ const stats = [
 	},
 ];
 
-export default function PricingContent() {
+export default function PricingContent({ faq }: { faq?: React.ReactNode }) {
 	return (
 		<>
 			{/* Hero */}
@@ -99,13 +99,14 @@ export default function PricingContent() {
 				<div className="container relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 					<div>
 						<SectionLabel>PRICING</SectionLabel>
-						<h1 className="heading-h1 mt-3 max-w-lg text-foreground">
-							Pricing Built Around{" "}
+						<h1 className="heading-h1 mt-3 max-w-xl text-foreground">
+							ESG Reporting Software Pricing Built Around{" "}
 							<span className="accent-italic">Your Organisation</span>
 						</h1>
 						<p className="text-body-lg text-foreground mt-4 max-w-xl">
-							We don&apos;t believe in one-size-fits-all plans. Your
-							organisation is unique — your pricing should reflect that.
+							Every organisation has different ESG reporting requirements. ESG
+							Horizon offers personalised pricing based on your organisation&apos;s
+							size, structure, reporting frameworks and selected modules.
 						</p>
 					</div>
 					<div className="absolute right-[-40px] top-1/2 -translate-y-1/2 lg:relative lg:right-auto lg:top-auto lg:translate-y-0 flex justify-end">
@@ -203,9 +204,9 @@ export default function PricingContent() {
 									Get a Personalised Plan
 								</h3>
 								<p className="text-body text-white mb-4">
-									Tell us about your organisation in a 30-minute demo.
-									We&apos;ll show you exactly what ESG Horizon can do — then
-									tailor a proposal just for you.
+									Tell us about your organisation and reporting requirements.
+									Our team will walk you through ESG Horizon and prepare a
+									pricing proposal based on your needs.
 								</p>
 								<p className="text-body-sm text-white mb-8">
 									All proposals quoted in USD. Local currency invoicing
@@ -371,6 +372,8 @@ export default function PricingContent() {
 					</div>
 				</div>
 			</section>
+
+			{faq}
 		</>
 	);
 }

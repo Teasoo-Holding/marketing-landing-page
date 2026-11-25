@@ -23,7 +23,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { CONTACT_EMAIL } from "@/lib/constants";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 const REQUEST_TYPES = ["demo", "quote", "support"];
 
@@ -75,17 +75,32 @@ const FORM_COPY: Record<string, { heading: string; subheading: string }> = {
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL;
 
+/**
+ * The page is prerendered with the demo form, so the whole page (heading, copy, form) is in the
+ * static HTML search engines read. In the browser, ?type=quote or ?type=support then switches
+ * the form. Reading the query string needs a Suspense boundary, and the demo version is its fallback.
+ */
 export default function ContactContent() {
-	const { toast } = useToast();
-	const router = useRouter();
-	const searchParams = useSearchParams();
-	const [loading, setLoading] = useState(false);
-	const [sectors, setSectors] = useState<{ id: string; name: string }[]>([]);
+	return (
+		<Suspense fallback={<ContactBody requestType="demo" />}>
+			<ContactWithParams />
+		</Suspense>
+	);
+}
 
-	const typeParam = searchParams.get("type");
+function ContactWithParams() {
+	const typeParam = useSearchParams().get("type");
 	// Campaign traffic books demos; quote and support stay reachable via ?type=
 	const requestType =
 		typeParam && REQUEST_TYPES.includes(typeParam) ? typeParam : "demo";
+	return <ContactBody requestType={requestType} />;
+}
+
+function ContactBody({ requestType }: { requestType: string }) {
+	const { toast } = useToast();
+	const router = useRouter();
+	const [loading, setLoading] = useState(false);
+	const [sectors, setSectors] = useState<{ id: string; name: string }[]>([]);
 
 	useEffect(() => {
 		fetch(`${API_BASE}/industries/sectors`)
@@ -196,8 +211,8 @@ export default function ContactContent() {
 					<div>
 						<SectionLabel dark>BOOK A DEMO</SectionLabel>
 						<h1 className="heading-h1 mt-3 max-w-xl">
-							Book a Demo. Get Your{" "}
-							<span className="accent-italic">IFRS S1 &amp; S2 Gap Assessment.</span>
+							Talk to Our{" "}
+							<span className="accent-italic">ESG Reporting Team</span>
 						</h1>
 						<p className="text-body-lg text-white mt-4 max-w-xl">
 							Book a personalised demo and receive an IFRS S1 &amp; S2 Gap

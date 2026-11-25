@@ -44,14 +44,14 @@ const HeroSection = () => (
 					</span>
 
 					<h1 className="heading-h1 mb-5 text-foreground">
-						Book a Demo. Get Your{" "}
-						<span className="accent-italic">IFRS S1 &amp; S2 Gap Assessment.</span>
+						IFRS-Ready ESG Reporting Platform for{" "}
+						<span className="accent-italic">Nigeria and Africa</span>
 					</h1>
 
 					<p className="text-body-lg text-foreground mb-6 max-w-[520px]">
-						Book a personalised demo and receive an IFRS S1 &amp; S2 Gap
-						Assessment to help identify potential reporting gaps, understand
-						your current readiness and prioritise your next steps.
+						Automate ESG reporting, manage sustainability data, assess IFRS S1
+						and S2 readiness, and track greenhouse gas emissions in one platform
+						built for African organisations.
 					</p>
 
 					<div className="flex gap-3 md:gap-4 mb-8">
