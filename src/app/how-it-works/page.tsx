@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import PageShell from "@/components/layout/PageShell";
 import HowItWorksContent from "./content";
 
-export const metadata: Metadata = {
-  title: "How It Works",
+export const metadata = pageMeta({
+  title: "How ESG Reporting Software Works | ESG Horizon",
   description:
-    "Set up your company, invite your team, and generate audit-ready ESG reports in 3 simple steps. No prior ESG knowledge required.",
-  alternates: { canonical: "/how-it-works/" },
-};
+    "Discover how ESG Horizon helps organisations collect ESG data, calculate emissions, manage sustainability disclosures and generate reports.",
+  path: "/how-it-works/",
+});
 
 export default function HowItWorksPage() {
   return (

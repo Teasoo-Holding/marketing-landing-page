@@ -1,13 +1,6 @@
-"use client";
-
 import windAirCurrent from "@/assets/wind-air-current.svg";
 import SectionLabel from "@/components/sections/SectionLabel";
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from "@/components/ui/accordion";
+import Faq from "@/components/seo/Faq";
 import Image from "next/image";
 
 // Step 1 icons
@@ -126,8 +119,12 @@ const faqs = [
 		a: "No. ESG Horizon is built for non-experts. The guided forms, embedded help text, and step-by-step workflows mean your operations, HR, and finance teams can contribute data confidently \u2014 even with no prior ESG knowledge. Your sustainability team manages oversight; everyone else just answers guided questions.",
 	},
 	{
-		q: "What reporting frameworks does ESG Horizon support?",
+		q: "What ESG reporting frameworks does ESG Horizon support?",
 		a: "ESG Horizon natively supports IFRS S1 & S2, GHG Protocol (Scopes 1, 2 & 3), GRI Standards, TCFD, and SASB. Multi-framework reporting is supported \u2014 data entered once maps automatically across all selected frameworks.",
+	},
+	{
+		q: "Can ESG Horizon help organisations prepare for IFRS S1 and S2 disclosures?",
+		a: "Yes. ESG Horizon assesses your readiness against IFRS S1 and IFRS S2, shows the gaps to close, collects the data and evidence each disclosure needs, calculates your Scope 1, 2 and 3 emissions for IFRS S2, and generates disclosure-ready reports. In Nigeria, this supports the FRC's readiness test ahead of mandatory reporting for public interest entities from 2028.",
 	},
 	{
 		q: "Can we manage multiple subsidiaries from one account?",
@@ -151,13 +148,14 @@ export default function HowItWorksContent() {
 				/>
 				<div className="container relative">
 					<SectionLabel dark>HOW IT WORKS</SectionLabel>
-					<h1 className="heading-h1 mt-3 max-w-lg">
-						From <span className="accent-italic">Setup to Insights</span> in
-						Minutes, Not Months
+					<h1 className="heading-h1 mt-3 max-w-2xl">
+						How ESG Horizon Simplifies the{" "}
+						<span className="accent-italic">ESG Reporting Process</span>
 					</h1>
 					<p className="text-body-lg text-white mt-4 max-w-xl">
-						ESG Horizon is designed so your team can be collecting real ESG data
-						within hours of signing up — no consultants, no training marathons.
+						From company setup to data collection and reporting, ESG Horizon
+						helps organisations manage their ESG reporting process in minutes
+						with just three simple steps.
 					</p>
 				</div>
 			</section>
@@ -227,33 +225,7 @@ export default function HowItWorksContent() {
 				</div>
 			</section>
 
-			{/* FAQ */}
-			<section className="py-section-y">
-				<div className="container max-w-3xl">
-					<div className="text-center mb-14">
-						<SectionLabel>COMMON QUESTIONS</SectionLabel>
-						<h2 className="heading-h2 mt-4">
-							Frequently Asked <span className="accent-italic">Questions</span>
-						</h2>
-					</div>
-					<Accordion type="single" collapsible className="space-y-4">
-						{faqs.map((faq, i) => (
-							<AccordionItem
-								key={i}
-								value={`faq-${i}`}
-								className="border border-border rounded-2xl px-5 md:px-8 py-1 bg-background shadow-sm"
-							>
-								<AccordionTrigger className="text-left font-semibold text-body hover:no-underline py-5">
-									{faq.q}
-								</AccordionTrigger>
-								<AccordionContent className="text-foreground text-body-sm pb-5">
-									{faq.a}
-								</AccordionContent>
-							</AccordionItem>
-						))}
-					</Accordion>
-				</div>
-			</section>
+			<Faq items={faqs} />
 		</>
 	);
 }
