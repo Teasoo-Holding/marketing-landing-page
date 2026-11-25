@@ -21,11 +21,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "ESG Horizon — Africa's #1 IFRS-Ready ESG Reporting Platform",
+    default: "IFRS-Ready ESG Reporting Platform for Nigeria & Africa | ESG Horizon",
     template: "%s | ESG Horizon",
   },
   description:
-    "Cut ESG reporting time by up to 60%. Automate IFRS S1 & S2 disclosures, GHG calculations, and audit-ready reports — built for African regulatory realities.",
+    "ESG Horizon helps organisations in Nigeria and across Africa simplify ESG reporting, manage sustainability data, automate IFRS S1 and S2 disclosures, and track greenhouse gas emissions in one platform.",
   keywords: [
     "ESG reporting",
     "IFRS S1",
@@ -37,14 +37,19 @@ export const metadata: Metadata = {
     "carbon accounting",
     "ESG disclosure",
     "Nigeria ESG",
+    "ESG reporting software",
+    "ESG software Africa",
+    "IFRS S1 compliance",
+    "IFRS S2 reporting",
+    "GHG accounting software",
+    "ESG data management software",
   ],
   authors: [{ name: "ESG Horizon" }],
   metadataBase: new URL("https://esghorizon.africa"),
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "ESG Horizon",
-    title: "ESG Horizon — Africa's #1 IFRS-Ready ESG Reporting Platform",
+    title: "IFRS-Ready ESG Reporting Platform for Nigeria & Africa | ESG Horizon",
     description:
       "Automate disclosures, reduce compliance risk, and gain a single source of truth for ESG data. IFRS S1 & S2 aligned, GHG Protocol compliant, audit-ready.",
     url: "/",
@@ -61,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@esghorizon",
-    title: "ESG Horizon — Africa's #1 IFRS-Ready ESG Reporting Platform",
+    title: "IFRS-Ready ESG Reporting Platform for Nigeria & Africa | ESG Horizon",
     description:
       "Cut ESG reporting time by up to 60%. Automate IFRS S1 & S2 disclosures, GHG calculations, and audit-ready reports.",
     images: [

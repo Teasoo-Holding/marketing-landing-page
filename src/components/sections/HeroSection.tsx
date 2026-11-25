@@ -20,7 +20,7 @@ const HeroSection = () => (
 		<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(255,255,255,0.5)_100%)]" />
 
 		{/* Capped content box — owns layout + decorative anchors */}
-		<div className="relative mx-auto max-w-[1280px] px-6 lg:px-12 pt-24 pb-16 lg:pt-28 lg:pb-20">
+		<div className="container relative pt-24 pb-16 lg:pt-28 lg:pb-20">
 			{/* Decorative leaf — anchored to capped box, hangs off the left edge */}
 			<img
 				src={leafNature.src}
@@ -44,14 +44,14 @@ const HeroSection = () => (
 					</span>
 
 					<h1 className="heading-h1 mb-5 text-foreground">
-						Book a Demo. Get Your{" "}
-						<span className="accent-italic">IFRS S1 &amp; S2 Gap Assessment.</span>
+						IFRS-Ready ESG Reporting Platform for{" "}
+						<span className="accent-italic">Nigeria and Africa</span>
 					</h1>
 
 					<p className="text-body-lg text-foreground mb-6 max-w-[520px]">
-						Book a personalised demo and receive an IFRS S1 &amp; S2 Gap
-						Assessment to help identify potential reporting gaps, understand
-						your current readiness and prioritise your next steps.
+						Automate ESG reporting, manage sustainability data, assess IFRS S1
+						and S2 readiness, and track greenhouse gas emissions in one platform
+						built for African organisations.
 					</p>
 
 					<div className="flex gap-3 md:gap-4 mb-8">

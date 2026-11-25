@@ -1,21 +1,18 @@
-import type { Metadata } from "next";
-import { Suspense } from "react";
+import { pageMeta } from "@/lib/seo";
 import PageShell from "@/components/layout/PageShell";
 import ContactContent from "./content";
 
-export const metadata: Metadata = {
-  title: "Book a Demo — IFRS S1 & S2 Gap Assessment",
+export const metadata = pageMeta({
+  title: "Contact ESG Horizon | Book an ESG Software Demo",
   description:
-    "Book a personalised ESG Horizon demo and receive an IFRS S1 & S2 Gap Assessment to identify reporting gaps, understand your readiness and prioritise your next steps.",
-  alternates: { canonical: "/contact/" },
-};
+    "Contact ESG Horizon to explore ESG reporting software, discuss your organisation's IFRS S1 and S2 requirements or book a personalised product demonstration.",
+  path: "/contact/",
+});
 
 export default function ContactPage() {
   return (
     <PageShell>
-      <Suspense>
-        <ContactContent />
-      </Suspense>
+      <ContactContent />
     </PageShell>
   );
 }
